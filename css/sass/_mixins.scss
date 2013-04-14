@@ -1,0 +1,13 @@
+@mixin font-size($size: 1.6, $line: $size * 1.5) {
+	font-size: ($size * 10) + px;
+	line-height: ($line * 10) + px;
+	font-size: $size + rem;
+	line-height: $line + rem;
+}
+
+@mixin contain-width {
+	max-width: $max-width;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}

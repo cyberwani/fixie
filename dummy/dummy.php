@@ -16,7 +16,7 @@
 // Apache + PHP + GD
 
 // BASIC CONFIGURATION
-$dummy_path = "/dummy"; // The location of "/dummy" relative to the webroot of your project. (Example: "/~username/Sites/ProjectName/dummy")
+$dummy_path = "/srv/www/wptrunk/wp-content/themes/fixie/dummy"; // The location of "/dummy" relative to the webroot of your project. (Example: "/~username/Sites/ProjectName/dummy")
 $flash_ads = false; // (true or false) Incorporate Adobe® Flash® based ads in the random selection and insertion of ads?
 define("JPEG_QUALITY", 90); // (1-100) You understand...
 define("MAX_WIDTH_PX", 2048); // (value in px) Max width of an image in assets/images

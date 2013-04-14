@@ -1,0 +1,20 @@
+$border: 1px solid #ccc;
+$max-width: 900px;
+
+
+@import 'bourbon/bourbon';
+@import 'normalize';
+@import 'mixins';
+@import 'front-page';
+
+html {
+	font-size: 62.5%; // Sets up the Base 10 stuff. The basic rem mixin we have assumes this.
+}
+
+.main-nav {
+	position:fixed;
+	height: 40px;
+	background-image: linear-gradient( #ececec, #ccc );
+}
+
+.page {}
