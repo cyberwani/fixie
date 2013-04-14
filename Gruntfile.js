@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 		concat: {
 			js: {
 				files: {
-					'js/fixie.js' : [ 'js/lib/*.js', 'js/src/*.js']
+					'js/build/fixie.js' : [ 'js/lib/*.js', 'js/src/*.js']
 				}
 			}
 		},
