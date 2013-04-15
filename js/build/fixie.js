@@ -406,3 +406,5 @@ var responsiveNav = (function (window, document) {
 
   return rn;
 })(window, document);
+
+var navigation = responsiveNav("#nav");

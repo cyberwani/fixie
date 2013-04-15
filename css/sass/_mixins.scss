@@ -10,4 +10,26 @@
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+	padding: 0 10px;
+}
+
+@mixin block-gradient {
+	@include background-image(linear-gradient(top, #fff, #fff, #fff, #ececec));
+	margin: 1em 0;
+	border-bottom: $border;
+	color: #888;
+	@include clearfix;
+}
+
+@mixin font-family( $location : heading ) {
+
+	@if $location == heading {
+		font-family: 'Inder', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	} @else if $location == body {
+		font-family: 'ABeeZee', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	} @else if $location == accent {
+		font-family: 'ABeeZee', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	} @else if $location == code {
+		font-family: Menlo, Consolas, 'DejaVu Sans Mono', Monaco, monospace;
+	}
 }

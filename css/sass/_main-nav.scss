@@ -1,0 +1,93 @@
+$nav-bar-height: 35px;
+
+#nav {
+
+	ul {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		display: block;
+		list-style: none;
+	}
+
+	li {
+		width: 100%;
+		display:block;
+	}
+
+	&.opened {
+		max-height: 9999px;
+	}
+
+}
+
+.js #nav {
+	clip: rect(0 0 0 0);
+	max-height: 0;
+	position: absolute;
+	display: block;
+	overflow: hidden;
+	zoom: 1;
+}
+
+@media screen and (min-width: 40em) {
+	.js #nav {
+		position: relative;
+		max-height: none;
+	}
+	#nav-toggle {
+		display: none;
+	}
+
+	#nav li {
+		@include inline-block;
+		width: auto;
+		left: -1px; // Shuffle this over because inline-block produces a space for every return/tab char.
+		position: relative;
+
+		a {
+			@include inline-block;
+			font-size: $nav-bar-height/2.5;
+			line-height: $nav-bar-height;
+			padding: 0 .5em;
+
+
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.6);
+				text-decoration: none;
+				color: #ececec;
+			}
+		}
+	}
+
+	#nav ul {
+		height: $nav-bar-height;
+	}
+
+	body {
+		margin-top: $nav-bar-height
+	}
+
+	.admin-bar .nav-bar {
+		top: 28px;
+	}
+
+	.nav-bar {
+		@include linear-gradient( #fff, #fff, #ececec );
+		margin: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		overflow: hidden;
+
+		.wp-post-image {
+			height: $nav-bar-height;
+			width: auto;
+			float: left;
+			margin: 0;
+			border-right: 1px solid #ececec;
+		}
+	}
+
+
+}

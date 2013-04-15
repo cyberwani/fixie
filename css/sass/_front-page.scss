@@ -26,12 +26,8 @@
 
 .book-block {
 
-	@include background-image(linear-gradient(top, #fff, #fff, #fff, #ececec));
-	margin: 1em 0;
-	border-bottom: $border;
 	@include font-size(1.5);
-	color: #888;
-	@include clearfix;
+	@include block-gradient;
 
 	h2 {
 		@include font-size(6, 6);
@@ -40,10 +36,9 @@
 		color: #ccc;
 		a {
 			text-decoration: none;
-			color: #a7ccd1;
+
 			&:hover {
-				@include transition(color .5s ease-in-out 0s);
-				color: #b5dfe5;
+
 			}
 		}
 	}
@@ -74,6 +69,7 @@
 
 		img {
 			height:auto;
+			margin:0;
 		}
 	}
 

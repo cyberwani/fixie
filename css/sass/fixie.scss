@@ -1,20 +1,56 @@
 $border: 1px solid #ccc;
-$max-width: 900px;
-
+$max-width: 800px;
 
 @import 'bourbon/bourbon';
-@import 'normalize';
 @import 'mixins';
+@import 'fluid-baseline-grid';
 @import 'front-page';
+@import 'main-nav';
+@import 'print';
 
 html {
 	font-size: 62.5%; // Sets up the Base 10 stuff. The basic rem mixin we have assumes this.
 }
 
-.main-nav {
-	position:fixed;
-	height: 40px;
-	background-image: linear-gradient( #ececec, #ccc );
+hr {
+	border: 0;
+	border-bottom: $border;
 }
 
-.page {}
+.docs-page {
+	@include block-gradient;
+
+	.inner-wrap {
+		@include contain-width;
+	}
+
+	.meta-col {
+		width: 25%;
+		float: left;
+		@include font-size( 1.2 );
+		text-align: right;
+		@include font-family('accent');
+
+		.excerpt {
+			border-bottom: $border;
+		}
+
+	}
+
+	.content-col {
+		@include font-size( 1.6 );
+		width: 70%;
+		padding-left: 4%;
+		float: left;
+	}
+
+	/* The document title */
+	.inner-wrap > h1 {
+		text-align: center;
+		@include font-size( 5 );
+		color: #ccc;
+		margin: 30px 0 40px 0;
+		margin: 3rem 0 4rem 0;
+	}
+
+}
