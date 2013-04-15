@@ -270,8 +270,8 @@ del {
 
 /* selected text */
 ::selection {
-  background: #c47529;
-  color: #fff;
+  background: #333;
+  color: #ccc;
   text-shadow: none; }
 
 /* selected text */
@@ -587,6 +587,8 @@ hr {
     font-family: 'ABeeZee', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; }
     .docs-page .meta-col .excerpt {
       border-bottom: 1px solid #cccccc; }
+    .docs-page .meta-col .revisions {
+      margin-top: 1.5em; }
   .docs-page .content-col {
     font-size: 16px;
     line-height: 24.0px;

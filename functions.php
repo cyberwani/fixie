@@ -72,7 +72,7 @@ function fixie_touch_parents() {
 }
 
 /**
- * List post revisions
+ * List post revisions in a select element
  *
  * @param $post_id integer of post to list revisions for
  *
@@ -84,12 +84,22 @@ function fixie_list_revisions( $post_id = null ) {
 	$revisions = fixie_get_revisions( $post_id );
 
 	if ( $revisions->have_posts() ) {
-		echo '<ol class="fixie-revision-list">';
+		echo '<select class="fixie-revision-list">';
 		while ( $revisions->have_posts() ) {
 			$revisions->the_post();
-			echo '<li class="fixie-revision" id="fixie-revision-' . get_the_ID() . '">' . human_time_diff( get_the_time('U')) . ' ago</li>';
+			?>
+				<option value="<?php the_ID(); ?>">
+					<?php
+					if ( 0 === $revisions->current_post ) {
+						echo 'current version';
+					} else {
+						the_time( 'd/m/Y, g:ia T' );
+					}
+					?>
+				</option>
+			<?php
 		}
-		echo '</ol>';
+		echo '</select>';
 	}
 
 	wp_reset_postdata();
