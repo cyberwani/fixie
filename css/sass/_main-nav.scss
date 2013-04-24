@@ -1,3 +1,5 @@
+// @todo this file is horrible copypasta. Refactor using a mobile first approach.
+
 $nav-bar-height: 35px;
 
 #nav {
@@ -8,15 +10,42 @@ $nav-bar-height: 35px;
 		width: 100%;
 		display: block;
 		list-style: none;
+		@include linear-gradient(#fff, #ececec);
 	}
 
 	li {
+		padding: .5em 1em;
+		@include font-size(2);
 		width: 100%;
-		display:block;
+		display: block;
+		border-bottom: 1px solid #ececec;
+
+		a {
+			@include inline-block;
+			width: 100%;
+			text-align:center;
+		}
+	}
+
+	.wp-post-image {
+		display: none;
 	}
 
 	&.opened {
 		max-height: 9999px;
+	}
+
+}
+
+#nav-toggle {
+	display: inline-block;
+	@include font-size(4);
+	@extend .icon-menu;
+	overflow: hidden;
+
+	@media screen and (max-width: 400px) {
+		width: 40px;
+		width: 4rem;
 	}
 
 }
@@ -39,55 +68,62 @@ $nav-bar-height: 35px;
 		display: none;
 	}
 
-	#nav li {
-		@include inline-block;
-		width: auto;
-		left: -1px; // Shuffle this over because inline-block produces a space for every return/tab char.
-		position: relative;
+	#nav {
 
-		a {
+		li {
 			@include inline-block;
-			font-size: $nav-bar-height/2.5;
-			line-height: $nav-bar-height;
-			padding: 0 .5em;
+			width: auto;
+			left: -1px;
+			// Shuffle this over because inline-block produces a space for every return/tab char.
+			position: relative;
+			padding: 0;
 
+			a {
+				color: #4797aa;
+				@include inline-block;
+				font-size: $nav-bar-height/2.5;
+				line-height: $nav-bar-height;
+				padding: 0 .5em;
 
-			&:hover {
-				background-color: rgba(0, 0, 0, 0.6);
-				text-decoration: none;
-				color: #ececec;
+				&:hover {
+					background-color: rgba(0, 0, 0, 0.6);
+					text-decoration: none;
+					color: #ececec;
+				}
 			}
 		}
-	}
+		.nav-bar {
+			@include linear-gradient(#fff, #fff, #ececec);
 
-	#nav ul {
-		height: $nav-bar-height;
-	}
+			margin: 0;
+			position: fixed;
+			z-index:1;
+			top: 0;
+			width: 100%;
+			overflow: hidden;
+
+			.wp-post-image {
+				display: inline-block;
+				height: $nav-bar-height;
+				width: auto;
+				float: left;
+				margin: 0;
+				border-right: 1px solid #ececec;
+			}
+		}
+
+		ul {
+			height: $nav-bar-height;
+		}
+
+	} // #nav
 
 	body {
 		margin-top: $nav-bar-height
 	}
 
-	.admin-bar .nav-bar {
+	.admin-bar #nav .nav-bar {
 		top: 28px;
 	}
-
-	.nav-bar {
-		@include linear-gradient( #fff, #fff, #ececec );
-		margin: 0;
-		position: fixed;
-		top: 0;
-		width: 100%;
-		overflow: hidden;
-
-		.wp-post-image {
-			height: $nav-bar-height;
-			width: auto;
-			float: left;
-			margin: 0;
-			border-right: 1px solid #ececec;
-		}
-	}
-
 
 }

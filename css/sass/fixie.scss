@@ -7,9 +7,11 @@ $max-width: 800px;
 @import 'front-page';
 @import 'main-nav';
 @import 'print';
+@import 'icomoon';
 
 html {
-	font-size: 62.5%; // Sets up the Base 10 stuff. The basic rem mixin we have assumes this.
+	font-size: 62.5%;
+	// Sets up the Base 10 stuff. The basic rem mixin we have assumes this.
 }
 
 hr {
@@ -19,42 +21,74 @@ hr {
 
 .docs-page {
 	@include block-gradient;
+	position: relative;
 
 	.inner-wrap {
 		@include contain-width;
+		@include clearfix;
+	}
+
+	section {
+		margin-top: 40px;
+		margin-top: 4rem;
 	}
 
 	.meta-col {
+		padding-left: 2%;
+		border-left: 1px dotted #ccc;
 		width: 25%;
-		float: left;
-		@include font-size( 1.2 );
-		text-align: right;
+		float: right;
+		@include font-size(1.2);
 		@include font-family('accent');
 
-		.excerpt {
-			border-bottom: $border;
-		}
-
 		.revisions {
-			margin-top: 1.5em;
+			margin-top: 2em;
 		}
 
 	}
 
+	.page-marker {
+		@include font-size(1.2);
+		background-color: rgba(0, 0, 0, 0.6);
+		color: #fff;
+		position: absolute;
+		top: -1.5em;
+		right: 0;
+		padding: 0 10px;
+	}
+
 	.content-col {
-		@include font-size( 1.6 );
+		@include font-size(1.6);
 		width: 70%;
-		padding-left: 4%;
+		padding-right: 2%;
 		float: left;
 	}
 
 	/* The document title */
 	.inner-wrap > h1 {
 		text-align: center;
-		@include font-size( 5 );
+		@include font-size(5);
 		color: #ccc;
 		margin: 30px 0 40px 0;
 		margin: 3rem 0 4rem 0;
 	}
 
+	section h1 {
+		@include font-size(5,6);
+		margin-top: -10px;
+		margin-top: -1rem; // optical alignment with stuff in the column
+	}
+
+}
+
+/**
+ * Offset anchors so that jumping to them doesn't make them go underneath stuff
+ */
+h1[id]:before,
+h2[id]:before,
+h3[id]:before {
+		display: block;
+		content: "";
+		height: 120px;
+		margin: -120px 0 0;
 }

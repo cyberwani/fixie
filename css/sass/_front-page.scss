@@ -25,14 +25,14 @@
 }
 
 .book-block {
-
 	@include font-size(1.5);
 	@include block-gradient;
+	margin: 0 0 40px 0;
 
 	h2 {
 		@include font-size(6, 6);
-		margin: 40px 0 10px 0;
-		margin: 40px 0 1rem 0;
+		margin: 0 0 10px 0;
+		margin: 0 0 1rem 0;
 		color: #ccc;
 		a {
 			text-decoration: none;
@@ -58,7 +58,7 @@
 		float: left;
 		display: block;
 		box-shadow: 5px 5px 20px #333;
-		margin: 40px 2% 40px 2%;
+		margin: 0 2% 0 0;
 		position: relative;
 		-moz-perspective: 100px;
 		-moz-transform: rotateY(-2deg);
@@ -89,7 +89,9 @@
 
 	.book-block-inner {
 		@include clearfix;
-		@include contain-width;
+		float: left;
+		width: 46%;
+		padding: 2% 2% 4% 2%;
 	}
 
 	.book:before,

@@ -21,6 +21,10 @@ function fixie_scripts() {
 	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Inder|ABeeZee:400,400italic', array() );
 	wp_enqueue_style( 'fixie', get_template_directory_uri() . '/css/build/fixie.css', array(), time() );
 	wp_enqueue_script( 'fixie', get_template_directory_uri() . '/js/build/fixie.js', array(), time(), true );
+
+	wp_localize_script( 'fixie', 'fixie', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' )
+	));
 }
 
 add_action( 'wp_enqueue_scripts', 'fixie_scripts' );
@@ -74,17 +78,19 @@ function fixie_touch_parents() {
 /**
  * List post revisions in a select element
  *
+ * @param $html_id string the HTML ID into which the revision should be ajax injected
  * @param $post_id integer of post to list revisions for
  *
+ * @see js/src/ajax-revisions.js
  * @uses fixie_get_revisions()
  * @return string ordered list of post revisions
  */
-function fixie_list_revisions( $post_id = null ) {
+function fixie_list_revisions( $html_id, $post_id = null ) {
 
 	$revisions = fixie_get_revisions( $post_id );
 
 	if ( $revisions->have_posts() ) {
-		echo '<select class="fixie-revision-list">';
+		echo '<select class="fixie-revision-list" data-inject-into="' . $html_id . '">';
 		while ( $revisions->have_posts() ) {
 			$revisions->the_post();
 			?>
@@ -152,3 +158,27 @@ function fixie_the_excerpt() {
 
 	the_excerpt();
 }
+
+/**
+ * Handles the ajax request that is looking for page content.
+ */
+function inject_page_ajax_handler(){
+
+	if( ! isset( $_GET['pageid'] ) || empty( $_GET['pageid'] ) ) {
+		echo '<p class="warning">Sorry, we were unable to find a revision</p>';
+		die();
+	}
+
+	$page = get_post( absint( $_GET['pageid'] ) );
+
+	if ( ! $page ) {
+		echo '<p class="warning">Sorry, we were unable to find this revision</p>';
+		die();
+	}
+
+	echo apply_filters( 'the_content', $page->post_content );
+	die();
+
+}
+add_action( 'wp_ajax_get-revision', 'inject_page_ajax_handler' );
+add_action( 'wp_ajax_nopriv_get-revision', 'inject_page_ajax_handler' );

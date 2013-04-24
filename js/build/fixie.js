@@ -407,4 +407,104 @@ var responsiveNav = (function (window, document) {
   return rn;
 })(window, document);
 
+/**
+ * When a revision select menu changes, grab the post_id (value) and inject it into a dom element data-inject-into
+ */
+(function (window, undefined) {
+	'use strict';
+
+	/**
+	 * Bind the event handler to an option menu
+	 */
+	function bindEvents() {
+		var selectBoxes = document.querySelectorAll('.fixie-revision-list');
+
+		for (var i = 0, len = selectBoxes.length; i < len; i++) {
+			selectBoxes[i].addEventListener( "change", ajaxRequest, false );
+		}
+	}
+
+	/**
+	 * Perform the ajax request
+	 * @param e event
+	 */
+	function ajaxRequest(e) {
+
+		var xhr = new XMLHttpRequest(),
+				el = e.target,
+				pageId = el.value,
+				url = fixie.ajaxurl + '?action=get-revision' + '&pageid=' + pageId;
+
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState < 4) {
+				return;
+			}
+
+			if (xhr.status !== 200) {
+				return;
+			}
+
+			if (xhr.readyState === 4) {
+				var injectIntoId = e.target.attributes[1].nodeValue; // super weak specifying the ID.
+
+				if ( injectIntoId === null ) {
+					return;
+				}
+
+				//var injectInto = document.getElementById(e.target.attribute('data-inject-into') );
+				var injectInto = document.getElementById( injectIntoId );
+				inject(injectInto, xhr.responseText);
+			}
+
+		};
+
+
+		xhr.open('GET', url, true);
+		xhr.send(null);
+
+	}
+
+	/**
+	 * Inject content into a particular dom element
+	 * @param el
+	 * @param content
+	 */
+	var inject = function (el, content) {
+
+		// scroll up the old content (will actually scroll if there's a css transition in place
+		el.style.height = 0;
+
+		// replace the html
+		el.innerHTML = content;
+
+		// show the new content
+		el.style.height = '';
+	};
+
+
+	bindEvents();
+})(this);
+/**
+ * Go through all the H1 tags. Find the ones that have id attributes and inject into the main navigation.
+ * @todo: automatically link H2, H3, and H4 headings as sub-menu items to their parent H1.
+ */
+(function (window, undefined) {
+	'use strict';
+
+	var headings = document.querySelectorAll('h1[id]');
+	var menu = document.querySelector('#nav ul');
+
+	for (var i = 0, len = headings.length; i < len; i++) {
+		var id = headings[i].getAttribute("id"),
+				title = headings[i].getAttribute("title") || headings[i].innerHTML,
+				li = document.createElement("li"),
+				a = document.createElement("a");
+
+		a.setAttribute( "href", "#" + id );
+		a.appendChild(a.appendChild(document.createTextNode(title)));
+		li.appendChild(a);
+		menu.appendChild( li );
+	}
+
+})(this);
 var navigation = responsiveNav("#nav");
