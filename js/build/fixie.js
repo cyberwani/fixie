@@ -501,7 +501,7 @@ var responsiveNav = (function (window, document) {
 				a = document.createElement("a");
 
 		a.setAttribute( "href", "#" + id );
-		a.appendChild(a.appendChild(document.createTextNode(title)));
+		a.innerHTML = title;
 		li.appendChild(a);
 		menu.appendChild( li );
 	}

@@ -50,8 +50,8 @@ hr {
 
 	.page-marker {
 		@include font-size(1.2);
-		background-color: rgba(0, 0, 0, 0.6);
-		color: #fff;
+		background-color: #5f5f5f;
+		color: #ececec;
 		position: absolute;
 		top: -1.5em;
 		right: 0;
