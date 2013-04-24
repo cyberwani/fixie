@@ -8,7 +8,7 @@ if ( have_posts() ):
 
 			<div class="inner-wrap">
 
-				<h1 title="Top" id="top"><?php the_title(); ?></h1>
+				<h1 class="main-title" title="Top" id="top"><?php the_title(); ?></h1>
 
 				<div class="content-col" id="top-content">
 					<?php the_content(); ?>
@@ -41,9 +41,9 @@ if ( have_posts() ):
 				?>
 				<div class="docs-page">
 					<section class="inner-wrap">
+						<h1 id="<?php echo $post->post_name; ?>"><?php the_title(); ?></h1>
 						<div class="page-marker">page&nbsp;<?php echo $children->current_post + 2; ?> | <?php the_title(); ?></div>
 						<div class="content-col" id="<?php echo $post->post_name; ?>-content">
-							<h1 id="<?php echo $post->post_name; ?>"><?php the_title(); ?></h1>
 							<?php the_content(); ?>
 						</div>
 

@@ -24,7 +24,7 @@ function fixie_scripts() {
 
 	wp_localize_script( 'fixie', 'fixie', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' )
-	));
+	) );
 }
 
 add_action( 'wp_enqueue_scripts', 'fixie_scripts' );
@@ -81,11 +81,16 @@ function fixie_touch_parents() {
  * @param $html_id string the HTML ID into which the revision should be ajax injected
  * @param $post_id integer of post to list revisions for
  *
- * @see js/src/ajax-revisions.js
+ * @see  js/src/ajax-revisions.js
  * @uses fixie_get_revisions()
  * @return string ordered list of post revisions
  */
 function fixie_list_revisions( $html_id, $post_id = null ) {
+
+	if ( empty( $post_id ) ) {
+		global $post;
+		$post_id = $post->ID;
+	}
 
 	$revisions = fixie_get_revisions( $post_id );
 
@@ -93,17 +98,13 @@ function fixie_list_revisions( $html_id, $post_id = null ) {
 		echo '<select class="fixie-revision-list" data-inject-into="' . $html_id . '">';
 		while ( $revisions->have_posts() ) {
 			$revisions->the_post();
-			?>
-				<option value="<?php the_ID(); ?>">
-					<?php
-					if ( 0 === $revisions->current_post ) {
-						echo 'current version';
-					} else {
-						the_time( 'd/m/Y, g:ia T' );
-					}
-					?>
-				</option>
-			<?php
+
+			if ( 0 === $revisions->current_post ): ?>
+				<option value="<?php echo $post_id; ?>">Current Version</option>
+			<?php else: ?>
+				<option value="<?php the_ID(); ?>"><?php the_time( 'd/m/y, g:ia T' ); ?></option>
+			<?php endif; ?>
+		<?php
 		}
 		echo '</select>';
 	}
@@ -129,11 +130,11 @@ function fixie_get_revisions( $post_id = null ) {
 	$revision_count = defined( 'WP_POST_REVISIONS' ) && is_int( WP_POST_REVISIONS ) ? WP_POST_REVISIONS : 50;
 
 	$revisions = new WP_Query( array(
-		'post_parent'    => $post_id,
-		'post_type'      => 'revision',
-		'posts_per_page' => $revision_count,
-		'post_status' => 'any',
-		'no_found_rows' => true,
+		'post_parent'            => $post_id,
+		'post_type'              => 'revision',
+		'posts_per_page'         => $revision_count,
+		'post_status'            => 'any',
+		'no_found_rows'          => true,
 		'update_post_term_cache' => false,
 		'update_post_meta_cache' => false
 	) );
@@ -162,23 +163,36 @@ function fixie_the_excerpt() {
 /**
  * Handles the ajax request that is looking for page content.
  */
-function inject_page_ajax_handler(){
+function inject_page_ajax_handler() {
 
-	if( ! isset( $_GET['pageid'] ) || empty( $_GET['pageid'] ) ) {
+	if ( ! isset( $_GET['pageid'] ) || empty( $_GET['pageid'] ) ) {
 		echo '<p class="warning">Sorry, we were unable to find a revision</p>';
 		die();
 	}
 
 	$page = get_post( absint( $_GET['pageid'] ) );
+	global $post;
+	$post = $page;
+	setup_postdata( $post );
 
 	if ( ! $page ) {
 		echo '<p class="warning">Sorry, we were unable to find this revision</p>';
 		die();
 	}
 
+	if ( wp_is_post_revision( $page ) ):
+		?>
+		<div class="alert alert-info">
+			<h4>This is a Revision</h4>
+			This section is now showing a revision that was originally created on <?php the_time( get_option( 'date_format' ) . ' \a\t ' . get_option( 'time_format' ) ); ?> by <?php the_author(); ?>
+		</div>
+		<?php the_content(); ?>
+	<?php
+	endif;
 	echo apply_filters( 'the_content', $page->post_content );
 	die();
 
 }
+
 add_action( 'wp_ajax_get-revision', 'inject_page_ajax_handler' );
 add_action( 'wp_ajax_nopriv_get-revision', 'inject_page_ajax_handler' );

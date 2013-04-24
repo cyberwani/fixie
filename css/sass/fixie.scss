@@ -8,6 +8,7 @@ $max-width: 800px;
 @import 'main-nav';
 @import 'print';
 @import 'icomoon';
+@import 'alerts';
 
 html {
 	font-size: 62.5%;
@@ -65,7 +66,7 @@ hr {
 	}
 
 	/* The document title */
-	.inner-wrap > h1 {
+	.main-title {
 		text-align: center;
 		@include font-size(5);
 		color: #ccc;

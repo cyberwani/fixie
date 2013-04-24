@@ -1,0 +1,97 @@
+// Form states and alerts
+// -------------------------
+$warningText: #c09853 !default;
+$warningBackground: #fcf8e3 !default;
+$warningBorder: darken(adjust-hue($warningBackground, -10), 3%) !default;
+$baseBorderRadius: 3px;
+$errorText: #b94a48 !default;
+$errorBackground: #f2dede !default;
+$errorBorder: darken(adjust-hue($errorBackground, -10), 3%) !default;
+
+$successText: #468847 !default;
+$successBackground: #dff0d8 !default;
+$successBorder: darken(adjust-hue($successBackground, -10), 5%) !default;
+
+$infoText: #3a87ad !default;
+$infoBackground: #d9edf7 !default;
+$infoBorder: darken(adjust-hue($infoBackground, -10), 7%) !default;
+
+$baseFontSize: 14px !default;
+$baseLineHeight: 20px !default;
+
+//
+// Alerts
+// --------------------------------------------------
+
+// Base styles
+// -------------------------
+
+.alert {
+	@include font-size( 1.5 );
+	padding: 8px 35px 8px 14px;
+	margin-bottom: $baseLineHeight;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+	background-color: $warningBackground;
+	border: 1px solid $warningBorder;
+	-webkit-border-radius: $baseBorderRadius;
+	border-radius: $baseBorderRadius;
+}
+
+.alert,
+.alert h4 {
+	color: $warningText;
+}
+
+.alert h4 {
+	@include font-size(1.5);
+	margin: 0;
+}
+
+.alert-success {
+	background-color: $successBackground;
+	border-color: $successBorder;
+	color: $successText;
+}
+
+.alert-success h4 {
+	color: $successText;
+}
+
+.alert-danger,
+.alert-error {
+	background-color: $errorBackground;
+	border-color: $errorBorder;
+	color: $errorText;
+}
+
+.alert-danger h4,
+.alert-error h4 {
+	color: $errorText;
+}
+
+.alert-info {
+	background-color: $infoBackground;
+	border-color: $infoBorder;
+	color: $infoText;
+}
+
+.alert-info h4 {
+	color: $infoText;
+}
+
+// Block alerts
+// -------------------------
+
+.alert {
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+
+.alert-block > p,
+.alert-block > ul {
+	margin-bottom: 0;
+}
+
+.alert p + p {
+	margin-top: 5px;
+}
