@@ -39,6 +39,7 @@ function fixie_modify_front_page_query( $query ) {
 		return;
 
 	$query->set( 'post_type', 'page' );
+	$query->set( 'post_parent', 0 );
 }
 
 add_action( 'pre_get_posts', 'fixie_modify_front_page_query' );
