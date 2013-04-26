@@ -1,5 +1,4 @@
 <?php
-require_once( get_template_directory() . '/dummy/dummy.php' );
 
 /**
  * Runs appropriate WordPress functions immediately after the theme has been loaded
