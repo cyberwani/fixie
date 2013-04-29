@@ -75,4 +75,4 @@
 
 
 	bindEvents();
-})(this);
+})(window);
