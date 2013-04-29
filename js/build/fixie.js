@@ -593,6 +593,8 @@ var responsiveNav = (function (window, document) {
 	 */
 	var expand = function (wrapperEl) {
 		wrapperEl.classList.remove('collapsed');
+
+		// Set the wrapper height to the height of the image it contains. Needs to be explicit for CSS transitions to work as epected.
 		wrapperEl.style.height = wrapperEl.querySelector('img').height + 'px';
 		wrapperEl.querySelector('.toggletext').innerHTML = 'Click to Collapse';
 	};
