@@ -232,6 +232,7 @@ figure {
 
 img, object, embed, video {
   max-width: 100%;
+  height: auto;
   _width: 100%; }
 
 /* Fluid images */
@@ -798,3 +799,23 @@ h3[id]:before {
   content: "";
   height: 120px;
   margin: -120px 0 0; }
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid #bbb;
+  margin: 1em 0;
+  max-width: 100%;
+  cursor: pointer; }
+  .image-container img {
+    margin: 0; }
+  .image-container .wp-caption-text {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ececec;
+    text-align: center;
+    margin-bottom: 0; }
