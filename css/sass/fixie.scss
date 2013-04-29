@@ -103,6 +103,8 @@ h3[id]:before {
 	max-width: 100%;
 	cursor: pointer;
 
+	@include transition( height .5s );
+
 	img {
 		margin: 0;
 	}
@@ -116,5 +118,12 @@ h3[id]:before {
 		color: #ececec;
 		text-align: center;
 		margin-bottom: 0;
+		padding: 10px 0;
+	}
+
+	.toggletext {
+		@include font-size( 1 );
+		margin: 0;
+		display: block;
 	}
 }

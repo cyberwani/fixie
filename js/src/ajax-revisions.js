@@ -45,6 +45,7 @@
 				//var injectInto = document.getElementById(e.target.attribute('data-inject-into') );
 				var injectInto = document.getElementById( injectIntoId );
 				inject(injectInto, xhr.responseText);
+				// @todo run the handleImages() function in collapsing-images.js. Will require a public API.
 			}
 
 		};

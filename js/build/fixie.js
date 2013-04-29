@@ -454,6 +454,7 @@ var responsiveNav = (function (window, document) {
 				//var injectInto = document.getElementById(e.target.attribute('data-inject-into') );
 				var injectInto = document.getElementById( injectIntoId );
 				inject(injectInto, xhr.responseText);
+				// @todo run the handleImages() function in collapsing-images.js. Will require a public API.
 			}
 
 		};
@@ -528,17 +529,15 @@ var responsiveNav = (function (window, document) {
 				imgListLen,
 				imgList;
 
-		for (i = 0, len = contentCols.length; i < len; i++) {
-			contentCols[i].addEventListener('click', contentColClicks);
-			handleImages(contentCols[i]);
+		window.addEventListener('load', function () {
 
-			imgList = contentCols[i].querySelectorAll('img');
-			for ( c = 0, imgListLen = imgList.length; c < imgListLen; c++ ) {
-				if ( imgList[i] !== undefined ) {
-					imgList[i].addEventListener('onload', 'processImage');
-				}
+			for (i = 0, len = contentCols.length; i < len; i++) {
+				contentCols[i].addEventListener('click', contentColClicks);
+				handleImages(contentCols[i]);
 			}
-		}
+
+		});
+
 	}
 
 	/**
@@ -546,18 +545,23 @@ var responsiveNav = (function (window, document) {
 	 * @param e event
 	 */
 	var contentColClicks = function (e) {
-		var parent;
+		var parent = getParentbyClass(e.target, 'image-container');
 
-		// Exit if we aren't clicking on a toggle.
-		if (!e.target.classList.contains('toggletext')) {
+		// Exit if this isn't an image container
+		if ( ! parent ) {
 			return true;
 		}
 
+		// Exit if we're clicking on an anchor, or if the parent is an anchor
+		if (e.target.nodeName === 'A' || e.target.parentNode.nodeName === 'A' ) {
+			return true;
+		}
+
+		// At this point, we can prevent the default and take some action
+
 		e.preventDefault();
-		parent = getParentbyClass(e.target, 'image-container');
 
 		if (parent.classList.contains('collapsed')) {
-
 			expand(parent);
 		} else {
 			collapse(parent);
@@ -570,7 +574,7 @@ var responsiveNav = (function (window, document) {
 	 * @param e event
 	 */
 	var processImage = function (e) {
-		window.console.log (e);
+		window.console.log(e);
 	};
 
 	/**
@@ -580,6 +584,7 @@ var responsiveNav = (function (window, document) {
 	var collapse = function (wrapperEl) {
 		wrapperEl.classList.add('collapsed');
 		wrapperEl.style.height = collapseHeight + 'px';
+		wrapperEl.querySelector('.toggletext').innerHTML = 'Click to Expand';
 	};
 
 	/**
@@ -588,7 +593,8 @@ var responsiveNav = (function (window, document) {
 	 */
 	var expand = function (wrapperEl) {
 		wrapperEl.classList.remove('collapsed');
-		wrapperEl.style.height = '';
+		wrapperEl.style.height = wrapperEl.querySelector('img').height + 'px';
+		wrapperEl.querySelector('.toggletext').innerHTML = 'Click to Collapse';
 	};
 
 	/**
@@ -622,7 +628,6 @@ var responsiveNav = (function (window, document) {
 
 		if (parent) {
 			parent.classList.add('image-container');
-			toggletext.innerHTML = '<br>' + toggletext.innerHTML;
 			parent.querySelector('.wp-caption-text').appendChild(toggletext);
 			wrapperEl = parent;
 		} else {
