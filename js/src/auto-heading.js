@@ -20,4 +20,4 @@
 		menu.appendChild( li );
 	}
 
-})(this);
+})(window);
