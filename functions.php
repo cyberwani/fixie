@@ -17,9 +17,12 @@ add_action( 'after_setup_theme', 'fixie_setup' );
  * @uses wp_enqueue_script
  */
 function fixie_scripts() {
+
+	$min = (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ) ? '' : 'min.';
+
 	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Inder|ABeeZee:400,400italic', array() );
-	wp_enqueue_style( 'fixie', get_template_directory_uri() . '/css/build/fixie.css', array(), time() );
-	wp_enqueue_script( 'fixie', get_template_directory_uri() . '/js/build/fixie.js', array(), time(), true );
+	wp_enqueue_style( 'fixie', get_template_directory_uri() . '/css/build/fixie.' . $min . 'css', array(), time() );
+	wp_enqueue_script( 'fixie', get_template_directory_uri() . '/js/build/fixie.' . $min . 'js', array(), time(), true );
 
 	wp_localize_script( 'fixie', 'fixie', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' )

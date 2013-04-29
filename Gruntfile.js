@@ -6,16 +6,40 @@ module.exports = function (grunt) {
 
 		sass : {
 			front: {
+				options: {
+					style: 'expanded',
+					debugInfo: true,
+					lineNumbers: true
+				},
+
 				files: {
 					'css/build/fixie.css' : 'css/sass/fixie.scss'
 				}
+			},
+
+			uglify: {
+				options: {
+					style: 'compressed'
+				},
+				files: {
+					'css/build/fixie.min.css' : 'css/sass/fixie.scss'
+				}
 			}
+
 		},
 
 		concat: {
 			js: {
 				files: {
 					'js/build/fixie.js' : [ 'js/lib/*.js', 'js/src/*.js']
+				}
+			}
+		},
+
+		uglify: {
+			js: {
+				files: {
+					'js/build/fixie.min.js' : 'js/build/fixie.js'
 				}
 			}
 		},
@@ -40,8 +64,9 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	// Default task(s).
-	grunt.registerTask('default', ['sass', 'concat']);
+	grunt.registerTask('default', ['sass', 'concat', 'uglify']);
 
 };

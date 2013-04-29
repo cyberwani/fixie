@@ -484,7 +484,7 @@ var responsiveNav = (function (window, document) {
 
 
 	bindEvents();
-})(this);
+})(window);
 /**
  * Go through all the H1 tags. Find the ones that have id attributes and inject into the main navigation.
  * @todo: automatically link H2, H3, and H4 headings as sub-menu items to their parent H1.
@@ -507,7 +507,7 @@ var responsiveNav = (function (window, document) {
 		menu.appendChild( li );
 	}
 
-})(this);
+})(window);
 /**
  * Make images not take up a whole mess of vertical space. Give them a full screen option.
  */
@@ -696,4 +696,5 @@ var responsiveNav = (function (window, document) {
 
 	init();
 })(window);
+// see /js/lib/responsive-nav.js for details
 var navigation = responsiveNav("#nav");
