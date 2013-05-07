@@ -22,7 +22,7 @@ function fixie_scripts() {
 
 	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Inder|ABeeZee:400,400italic', array() );
 	wp_enqueue_style( 'fixie', get_template_directory_uri() . '/css/build/fixie.' . $min . 'css', array(), time() );
-	wp_enqueue_script( 'fixie', get_template_directory_uri() . '/js/build/fixie.' . $min . 'js', array(), time(), true );
+	wp_enqueue_script( 'fixie', get_template_directory_uri() . '/js/build/fixie.' . $min . 'js', array( 'jquery' ), time(), true );
 
 	wp_localize_script( 'fixie', 'fixie', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' )
@@ -105,7 +105,10 @@ function fixie_list_revisions( $html_id, $post_id = null ) {
 			if ( 0 === $revisions->current_post ): ?>
 				<option value="<?php echo $post_id; ?>">Current Version</option>
 			<?php else: ?>
-				<option value="<?php the_ID(); ?>"><?php the_time( 'd/m/y, g:ia T' ); ?></option>
+				<option value="<?php the_ID(); ?>">
+					<?php echo wp_post_revision_title_expanded( get_the_ID(), false ); ?>
+					<?php //the_time( 'd/m/y, g:ia T' ); ?>
+				</option>
 			<?php endif; ?>
 		<?php
 		}
@@ -189,13 +192,14 @@ function inject_page_ajax_handler() {
 			<h4>This is a Revision</h4>
 			This section is now showing a revision that was originally created on <?php the_time( get_option( 'date_format' ) . ' \a\t ' . get_option( 'time_format' ) ); ?> by <?php the_author(); ?>
 		</div>
-		<?php the_content(); ?>
+
 	<?php
 	endif;
-	echo apply_filters( 'the_content', $page->post_content );
+	the_content();
+
 	die();
 
 }
 
 add_action( 'wp_ajax_get-revision', 'inject_page_ajax_handler' );
-add_action( 'wp_ajax_nopriv_get-revision', 'inject_page_ajax_handler' );
+add_action( 'wp_ajax_nopriv_get-revision's, 'inject_page_ajax_handler' );

@@ -31,7 +31,9 @@ if ( have_posts() ):
 		$children = new WP_Query( array(
 			'posts_per_page' => - 1,
 			'post_type'      => 'page',
-			'post_parent'    => get_the_ID()
+			'post_parent'    => get_the_ID(),
+			'orderby' => 'menu_order',
+			'order' => 'asc'
 		) );
 
 		if ( $children->have_posts() ):

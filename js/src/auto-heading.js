@@ -8,16 +8,17 @@
 	var headings = document.querySelectorAll('h1[id]');
 	var menu = document.querySelector('#nav ul');
 
-	for (var i = 0, len = headings.length; i < len; i++) {
+
+	jQuery(headings).each(function (i, v) {
 		var id = headings[i].getAttribute("id"),
 				title = headings[i].getAttribute("title") || headings[i].innerHTML,
 				li = document.createElement("li"),
 				a = document.createElement("a");
 
-		a.setAttribute( "href", "#" + id );
+		a.setAttribute("href", "#" + id);
 		a.innerHTML = title;
 		li.appendChild(a);
-		menu.appendChild( li );
-	}
+		menu.appendChild(li);
+	});
 
-})(window);
+}(window));

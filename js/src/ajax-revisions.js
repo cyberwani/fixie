@@ -1,18 +1,14 @@
 /**
  * When a revision select menu changes, grab the post_id (value) and inject it into a dom element data-inject-into
  */
-(function (window, undefined) {
+(function (jQuery, window, undefined) {
 	'use strict';
 
 	/**
 	 * Bind the event handler to an option menu
 	 */
 	function bindEvents() {
-		var selectBoxes = document.querySelectorAll('.fixie-revision-list');
-
-		for (var i = 0, len = selectBoxes.length; i < len; i++) {
-			selectBoxes[i].addEventListener( "change", ajaxRequest, false );
-		}
+		jQuery(document.querySelectorAll('.fixie-revision-list')).on( 'change', ajaxRequest );
 	}
 
 	/**
@@ -20,39 +16,22 @@
 	 * @param e event
 	 */
 	function ajaxRequest(e) {
+		var el = e.target,
+		pageId = el.value,
+		injectInto = document.getElementById(e.target.attributes[1].nodeValue);
 
-		var xhr = new XMLHttpRequest(),
-				el = e.target,
-				pageId = el.value,
-				url = fixie.ajaxurl + '?action=get-revision' + '&pageid=' + pageId;
+		jQuery.get( fixie.ajaxurl, {
+			'action' : 'get-revision',
+			'pageid' : pageId
+		}, function( data, textStatus, jqXHR ){
 
-		xhr.onreadystatechange = function () {
-			if (xhr.readyState < 4) {
-				return;
-			}
+			if ( textStatus != 'success' )
+				return false;
 
-			if (xhr.status !== 200) {
-				return;
-			}
+			inject(injectInto, data); // @todo now run the handleImages() function in collapsing-images.js. Will require a public API.
+			return true;
 
-			if (xhr.readyState === 4) {
-				var injectIntoId = e.target.attributes[1].nodeValue; // super weak specifying the ID.
-
-				if ( injectIntoId === null ) {
-					return;
-				}
-
-				//var injectInto = document.getElementById(e.target.attribute('data-inject-into') );
-				var injectInto = document.getElementById( injectIntoId );
-				inject(injectInto, xhr.responseText);
-				// @todo run the handleImages() function in collapsing-images.js. Will require a public API.
-			}
-
-		};
-
-
-		xhr.open('GET', url, true);
-		xhr.send(null);
+		}, 'html');
 
 	}
 
@@ -75,4 +54,4 @@
 
 
 	bindEvents();
-})(window);
+})(jQuery, window);

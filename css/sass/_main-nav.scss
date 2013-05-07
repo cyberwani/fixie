@@ -92,6 +92,11 @@ $nav-bar-height: 35px;
 				}
 			}
 		}
+
+		.active {
+			border-top: 3px solid #333;
+		}
+
 		.nav-bar {
 			@include linear-gradient(#fff, #fff, #ececec);
 

@@ -14,10 +14,7 @@
 	function init() {
 		var contentCols = document.querySelectorAll('.content-col'),
 				i,
-				len,
-				c,
-				imgListLen,
-				imgList;
+				len;
 
 		window.addEventListener('load', function () {
 
@@ -57,14 +54,7 @@
 			collapse(parent);
 		}
 
-	};
-
-	/**
-	 * Callback for when images load
-	 * @param e event
-	 */
-	var processImage = function (e) {
-		window.console.log(e);
+		return false;
 	};
 
 	/**

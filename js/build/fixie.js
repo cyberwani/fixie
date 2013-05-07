@@ -410,18 +410,14 @@ var responsiveNav = (function (window, document) {
 /**
  * When a revision select menu changes, grab the post_id (value) and inject it into a dom element data-inject-into
  */
-(function (window, undefined) {
+(function (jQuery, window, undefined) {
 	'use strict';
 
 	/**
 	 * Bind the event handler to an option menu
 	 */
 	function bindEvents() {
-		var selectBoxes = document.querySelectorAll('.fixie-revision-list');
-
-		for (var i = 0, len = selectBoxes.length; i < len; i++) {
-			selectBoxes[i].addEventListener( "change", ajaxRequest, false );
-		}
+		jQuery(document.querySelectorAll('.fixie-revision-list')).on( 'change', ajaxRequest );
 	}
 
 	/**
@@ -429,39 +425,22 @@ var responsiveNav = (function (window, document) {
 	 * @param e event
 	 */
 	function ajaxRequest(e) {
+		var el = e.target,
+		pageId = el.value,
+		injectInto = document.getElementById(e.target.attributes[1].nodeValue);
 
-		var xhr = new XMLHttpRequest(),
-				el = e.target,
-				pageId = el.value,
-				url = fixie.ajaxurl + '?action=get-revision' + '&pageid=' + pageId;
+		jQuery.get( fixie.ajaxurl, {
+			'action' : 'get-revision',
+			'pageid' : pageId
+		}, function( data, textStatus, jqXHR ){
 
-		xhr.onreadystatechange = function () {
-			if (xhr.readyState < 4) {
-				return;
-			}
+			if ( textStatus != 'success' )
+				return false;
 
-			if (xhr.status !== 200) {
-				return;
-			}
+			inject(injectInto, data); // @todo now run the handleImages() function in collapsing-images.js. Will require a public API.
+			return true;
 
-			if (xhr.readyState === 4) {
-				var injectIntoId = e.target.attributes[1].nodeValue; // super weak specifying the ID.
-
-				if ( injectIntoId === null ) {
-					return;
-				}
-
-				//var injectInto = document.getElementById(e.target.attribute('data-inject-into') );
-				var injectInto = document.getElementById( injectIntoId );
-				inject(injectInto, xhr.responseText);
-				// @todo run the handleImages() function in collapsing-images.js. Will require a public API.
-			}
-
-		};
-
-
-		xhr.open('GET', url, true);
-		xhr.send(null);
+		}, 'html');
 
 	}
 
@@ -484,7 +463,7 @@ var responsiveNav = (function (window, document) {
 
 
 	bindEvents();
-})(window);
+})(jQuery, window);
 /**
  * Go through all the H1 tags. Find the ones that have id attributes and inject into the main navigation.
  * @todo: automatically link H2, H3, and H4 headings as sub-menu items to their parent H1.
@@ -495,19 +474,20 @@ var responsiveNav = (function (window, document) {
 	var headings = document.querySelectorAll('h1[id]');
 	var menu = document.querySelector('#nav ul');
 
-	for (var i = 0, len = headings.length; i < len; i++) {
+
+	jQuery(headings).each(function (i, v) {
 		var id = headings[i].getAttribute("id"),
 				title = headings[i].getAttribute("title") || headings[i].innerHTML,
 				li = document.createElement("li"),
 				a = document.createElement("a");
 
-		a.setAttribute( "href", "#" + id );
+		a.setAttribute("href", "#" + id);
 		a.innerHTML = title;
 		li.appendChild(a);
-		menu.appendChild( li );
-	}
+		menu.appendChild(li);
+	});
 
-})(window);
+}(window));
 /**
  * Make images not take up a whole mess of vertical space. Give them a full screen option.
  */
@@ -524,10 +504,7 @@ var responsiveNav = (function (window, document) {
 	function init() {
 		var contentCols = document.querySelectorAll('.content-col'),
 				i,
-				len,
-				c,
-				imgListLen,
-				imgList;
+				len;
 
 		window.addEventListener('load', function () {
 
@@ -567,14 +544,7 @@ var responsiveNav = (function (window, document) {
 			collapse(parent);
 		}
 
-	};
-
-	/**
-	 * Callback for when images load
-	 * @param e event
-	 */
-	var processImage = function (e) {
-		window.console.log(e);
+		return false;
 	};
 
 	/**
