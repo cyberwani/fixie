@@ -1,74 +1,73 @@
 /**
  * Alert Divs.
  *
- * include .alert and optionally .alert-success, .alert-danger, .alert-error, or .alert-info
+ * Usage:
+ * .alert for a warning
+ * .alert-success for a success (green) box
+ * .alert-danger for a danger (red) box. Currently the same as .alert-error
+ * .alert-error for a error (red) box.
+ * .alert-info for a general purpose info (blue) box.
  */
 .alert {
-	@include font-size( 1.5 );
-	padding: 8px 35px 8px 14px;
+	@include font-size(1.5);
+	padding: 14px 35px 14px 14px;
 	margin-bottom: $lineHeight;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
 	background-color: $warningBackground;
 	border: 1px solid $warningBorder;
 	-webkit-border-radius: $borderRadius;
 	border-radius: $borderRadius;
-}
-
-.alert,
-.alert h4 {
 	color: $warningText;
-}
 
-.alert h4 {
-	@include font-size(1.5);
-	margin: 0;
+	h4 {
+		color: $warningText;
+		@include font-size(1.5);
+		margin: 0;
+	}
+
+	> p,
+	> ul {
+		margin-bottom: 0;
+	}
+
+	p + p {
+		margin-top: 5px;
+	}
+
 }
 
 .alert-success {
+	@extend .alert;
 	background-color: $successBackground;
 	border-color: $successBorder;
 	color: $successText;
-}
 
-.alert-success h4 {
-	color: $successText;
+	h4 {
+		color: $successText;
+	}
+
 }
 
 .alert-danger,
 .alert-error {
+	@extend .alert;
 	background-color: $errorBackground;
 	border-color: $errorBorder;
 	color: $errorText;
-}
 
-.alert-danger h4,
-.alert-error h4 {
-	color: $errorText;
+	h4 {
+		color: $errorText;
+	}
 }
 
 .alert-info {
+	@extend .alert;
 	background-color: $infoBackground;
 	border-color: $infoBorder;
 	color: $infoText;
-}
 
-.alert-info h4 {
-	color: $infoText;
-}
+	h4 {
+		color: $infoText;
+	}
 
-// Block alerts
-// -------------------------
-
-.alert {
-	padding-top: 14px;
-	padding-bottom: 14px;
-}
-
-.alert-block > p,
-.alert-block > ul {
-	margin-bottom: 0;
-}
-
-.alert p + p {
-	margin-top: 5px;
 }

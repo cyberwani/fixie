@@ -75,11 +75,11 @@
 			padding: 0;
 
 			a {
-				color: #4797aa;
+				color: $linkColor;
 				@include inline-block;
 				font-size: $nav-bar-height/2.5;
 				line-height: $nav-bar-height;
-				padding: 0 .5em;
+				margin: 0 1em 0 0;
 
 				&:hover {
 					background-color: rgba(0, 0, 0, 0.6);

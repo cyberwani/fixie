@@ -1,8 +1,8 @@
-// 3rd party mixin library
-@import 'bourbon/bourbon';
-
 // Sets up all reusable variables
 @import 'variables';
+
+// 3rd party mixin library
+@import 'bourbon/bourbon';
 
 // Custom mixins
 @import 'mixins';
