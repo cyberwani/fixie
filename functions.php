@@ -202,4 +202,4 @@ function inject_page_ajax_handler() {
 }
 
 add_action( 'wp_ajax_get-revision', 'inject_page_ajax_handler' );
-add_action( 'wp_ajax_nopriv_get-revision's, 'inject_page_ajax_handler' );
+add_action( 'wp_ajax_nopriv_get-revision', 'inject_page_ajax_handler' );

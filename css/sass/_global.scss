@@ -1,0 +1,21 @@
+html {
+	// Sets up the Base 10 stuff. The basic rem mixin we have assumes 62.5%
+	font-size: $fontSize
+}
+
+hr {
+	border: 0;
+	border-bottom: $border;
+}
+
+/**
+ * Offset anchors so that jumping to them doesn't make them go underneath stuff
+ */
+h1[id]:before,
+h2[id]:before,
+h3[id]:before {
+	display: block;
+	content: "";
+	height: 120px;
+	margin: -120px 0 0;
+}

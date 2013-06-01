@@ -1,0 +1,62 @@
+.docs-page {
+	@include block-gradient;
+	position: relative;
+
+	.inner-wrap {
+		@include contain-width;
+		@include clearfix;
+	}
+
+	section {
+		margin-top: 40px;
+		margin-top: 4rem;
+	}
+
+	.meta-col {
+		padding-left: 2%;
+		border-left: $subtleBorder;
+		width: 25%;
+		float: right;
+		@include font-size(1.2);
+		@include font-family('accent');
+
+		.revisions {
+			margin-top: 2em;
+		}
+
+	}
+
+	.page-marker {
+		@include font-size(1.2);
+		background-color: #5f5f5f;
+		color: #ececec;
+		position: absolute;
+		top: -1.5em;
+		right: 0;
+		padding: 0 10px;
+	}
+
+	.content-col {
+		@include font-size(1.6);
+		width: 70%;
+		padding-right: 2%;
+		float: left;
+	}
+
+	/* The document title */
+	.main-title {
+		text-align: center;
+		@include font-size(6);
+		color: #ccc;
+		margin: 30px 0 40px 0;
+		margin: 3rem 0 4rem 0;
+	}
+
+	section h1 {
+		@include font-size(5, 6);
+		margin-top: -10px;
+		margin-top: -1rem;
+		// optical alignment with stuff in the column
+	}
+
+}

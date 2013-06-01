@@ -1,4 +1,7 @@
 /*
+ * Alerts and Notifications
+ */
+/*
 	Fluid Baseline Grid v1.0.0
 	Designed & Built by Josh Hopkins and 40 Horse, http://40horse.com
 	Licensed under Unlicense, http://unlicense.org/
@@ -432,165 +435,112 @@ span.amp {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\000032}}
-.home h1 {
-  text-align: center;
-  font-size: 60px;
-  line-height: 90px;
-  font-size: 6rem;
-  line-height: 9rem;
-  color: #ccc;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_global\.scss}line{font-family:\000031}}
+html {
+  font-size: 62.5%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000310}}
-.home h1:before {
-  content: "\270D";
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000315}}
-.home .description {
-  text-transform: uppercase;
-  font-size: 15px;
-  line-height: 22.5px;
-  font-size: 1.5rem;
-  line-height: 2.25rem;
-  letter-spacing: .2em;
-  text-align: center;
-  margin: 0;
-  margin-bottom: 5em;
-  padding-bottom: 5em;
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_global\.scss}line{font-family:\000036}}
+hr {
+  border: 0;
   border-bottom: 1px solid #cccccc;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000327}}
-.book-block {
-  font-size: 15px;
-  line-height: 22.5px;
-  font-size: 1.5rem;
-  line-height: 2.25rem;
-  background-image: -webkit-linear-gradient(top, white, white, white, #ececec);
-  background-image: linear-gradient(to bottom, white, white, white, #ececec);
-  margin: 1em 0;
-  border-bottom: 1px solid #cccccc;
-  color: #888;
-  *zoom: 1;
-  margin: 0 0 40px 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
-.book-block:before, .book-block:after {
-  content: " ";
-  display: table;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
-.book-block:after {
-  clear: both;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000332}}
-.book-block h2 {
-  font-size: 60px;
-  line-height: 60px;
-  font-size: 6rem;
-  line-height: 6rem;
-  margin: 0 0 10px 0;
-  margin: 0 0 1rem 0;
-  color: #ccc;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000337}}
-.book-block h2 a {
-  text-decoration: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000346}}
-.book-block .book img {
-  vertical-align: middle;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000350}}
-.book-block .books {
-  -moz-perspective: 100px;
-  -moz-transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000356}}
-.book-block .book {
-  max-width: 20%;
-  float: left;
+/**
+ * Offset anchors so that jumping to them doesn't make them go underneath stuff
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_global\.scss}line{font-family:\0000316}}
+h1[id]:before,
+h2[id]:before,
+h3[id]:before {
   display: block;
-  box-shadow: 5px 5px 20px #333;
-  margin: 0 2% 0 0;
-  position: relative;
-  -moz-perspective: 100px;
-  -moz-transform: rotateY(-2deg);
-  -webkit-transform: perspective(100) rotateY(-2deg);
-  outline: 1px solid transparent;
-  /* Helps smooth jagged edges in Firefox */
-  box-shadow: none;
-  z-index: 1;
+  content: "";
+  height: 120px;
+  margin: -120px 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000370}}
-.book-block .book img {
-  height: auto;
-  margin: 0;
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000376}}
-.book-block .book-info {
-  float: left;
-  padding-left: 2%;
-  max-width: 74%;
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000313}}
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000383}}
-.book-block .book img {
-  position: relative;
-  max-width: 100%;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000330}}
+.icon-book-alt2, .icon-home, .icon-menu, #nav-toggle, .icon-new-tab, .icon-spinner, .icon-quill, .icon-console, .icon-code, .icon-info {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000390}}
-.book-block .book-block-inner {
-  *zoom: 1;
-  float: left;
-  width: 46%;
-  padding: 2% 2% 4% 2%;
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000340}}
+.icon-book-alt2:before {
+  content: "\e004";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
-.book-block .book-block-inner:before, .book-block .book-block-inner:after {
-  content: " ";
-  display: table;
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000343}}
+.icon-home:before {
+  content: "\e005";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
-.book-block .book-block-inner:after {
-  clear: both;
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000346}}
+.icon-menu:before, #nav-toggle:before {
+  content: "\e006";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000398}}
-.book-block .book:before,
-.book-block .book:after {
-  position: absolute;
-  top: 2%;
-  height: 96%;
-  content: ' ';
-  z-index: -1;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000349}}
+.icon-new-tab:before {
+  content: "\e007";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\00003108}}
-.book-block .book:before {
-  width: 99%;
-  left: 7%;
-  background-color: #888;
-  border-radius: 2px;
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000352}}
+.icon-spinner:before {
+  content: "\e008";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\00003115}}
-.book-block .book:after {
-  width: 5%;
-  left: 99%;
-  background-color: #EFEFEF;
-  -moz-transform: rotateY(20deg);
-  -webkit-transform: perspective(100) rotateY(20deg);
-  background-image: url(../../images/book-pages.png);
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000355}}
+.icon-quill:before {
+  content: "\e009";
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\00003115}}
-  .book-block .book:after {
-    background-size: 22.5px auto;
-  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000358}}
+.icon-console:before {
+  content: "\e000";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000361}}
+.icon-code:before {
+  content: "\e001";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000364}}
+.icon-info:before {
+  content: "\e002";
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_main-nav\.scss}line{font-family:\000037}}
@@ -816,91 +766,12 @@ span.amp {
     page-break-after: avoid;
   }
 }
-@font-face {
-  font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot");
-  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Use the following CSS code if you want to use data attributes for inserting your icons */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000313}}
-[data-icon]:before {
-  font-family: 'icomoon';
-  content: attr(data-icon);
-  speak: none;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="icon-"] {
-*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000330}}
-.icon-book-alt2, .icon-home, .icon-menu, #nav-toggle, .icon-new-tab, .icon-spinner, .icon-quill, .icon-console, .icon-code, .icon-info {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000340}}
-.icon-book-alt2:before {
-  content: "\e004";
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000343}}
-.icon-home:before {
-  content: "\e005";
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000346}}
-.icon-menu:before, #nav-toggle:before {
-  content: "\e006";
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000349}}
-.icon-new-tab:before {
-  content: "\e007";
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000352}}
-.icon-spinner:before {
-  content: "\e008";
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000355}}
-.icon-quill:before {
-  content: "\e009";
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000358}}
-.icon-console:before {
-  content: "\e000";
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000361}}
-.icon-code:before {
-  content: "\e001";
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_icomoon\.scss}line{font-family:\0000364}}
-.icon-info:before {
-  content: "\e002";
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000329}}
+/**
+ * Alert Divs.
+ *
+ * include .alert and optionally .alert-success, .alert-danger, .alert-error, or .alert-info
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\000036}}
 .alert {
   font-size: 15px;
   line-height: 22.5px;
@@ -915,13 +786,13 @@ you can use the generic selector below, but it's slower:
   border-radius: 3px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000318}}
 .alert,
 .alert h4 {
   color: #c09853;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000322}}
 .alert h4 {
   font-size: 15px;
   line-height: 22.5px;
@@ -930,19 +801,19 @@ you can use the generic selector below, but it's slower:
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000327}}
 .alert-success {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000333}}
 .alert-success h4 {
   color: #468847;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000338}}
 .alert-danger,
 .alert-error {
   background-color: #f2dede;
@@ -950,53 +821,203 @@ you can use the generic selector below, but it's slower:
   color: #b94a48;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000345}}
 .alert-danger h4,
 .alert-error h4 {
   color: #b94a48;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000349}}
 .alert-info {
   background-color: #d9edf7;
   border-color: #bce8f1;
   color: #3a87ad;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000355}}
 .alert-info h4 {
   color: #3a87ad;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000362}}
 .alert {
   padding-top: 14px;
   padding-bottom: 14px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000368}}
 .alert-block > p,
 .alert-block > ul {
   margin-bottom: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000372}}
 .alert p + p {
   margin-top: 5px;
 }
 
-@media -sass-debug-info{filename{}line{font-family:\0000313}}
-html {
-  font-size: 62.5%;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\000032}}
+.home h1 {
+  text-align: center;
+  font-size: 60px;
+  line-height: 90px;
+  font-size: 6rem;
+  line-height: 9rem;
+  color: #ccc;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: .1em;
 }
-
-@media -sass-debug-info{filename{}line{font-family:\0000318}}
-hr {
-  border: 0;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000310}}
+.home h1:before {
+  content: "\270D";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000315}}
+.home .description {
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 22.5px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  letter-spacing: .2em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 5em;
+  padding-bottom: 5em;
   border-bottom: 1px solid #cccccc;
 }
 
-@media -sass-debug-info{filename{}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000327}}
+.book-block {
+  font-size: 15px;
+  line-height: 22.5px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  background-image: -webkit-linear-gradient(top, white, white, white, #ececec);
+  background-image: linear-gradient(to bottom, white, white, white, #ececec);
+  margin: 1em 0;
+  border-bottom: 1px solid #cccccc;
+  color: #888;
+  *zoom: 1;
+  margin: 0 0 40px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
+.book-block:before, .book-block:after {
+  content: " ";
+  display: table;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
+.book-block:after {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000332}}
+.book-block h2 {
+  font-size: 60px;
+  line-height: 60px;
+  font-size: 6rem;
+  line-height: 6rem;
+  margin: 0 0 10px 0;
+  margin: 0 0 1rem 0;
+  color: #ccc;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000337}}
+.book-block h2 a {
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000346}}
+.book-block .book img {
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000350}}
+.book-block .books {
+  -moz-perspective: 100px;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000356}}
+.book-block .book {
+  max-width: 20%;
+  float: left;
+  display: block;
+  box-shadow: 5px 5px 20px #333;
+  margin: 0 2% 0 0;
+  position: relative;
+  -moz-perspective: 100px;
+  -moz-transform: rotateY(-2deg);
+  -webkit-transform: perspective(100) rotateY(-2deg);
+  outline: 1px solid transparent;
+  /* Helps smooth jagged edges in Firefox */
+  box-shadow: none;
+  z-index: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000370}}
+.book-block .book img {
+  height: auto;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000376}}
+.book-block .book-info {
+  float: left;
+  padding-left: 2%;
+  max-width: 74%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000383}}
+.book-block .book img {
+  position: relative;
+  max-width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000390}}
+.book-block .book-block-inner {
+  *zoom: 1;
+  float: left;
+  width: 46%;
+  padding: 2% 2% 4% 2%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
+.book-block .book-block-inner:before, .book-block .book-block-inner:after {
+  content: " ";
+  display: table;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
+.book-block .book-block-inner:after {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000398}}
+.book-block .book:before,
+.book-block .book:after {
+  position: absolute;
+  top: 2%;
+  height: 96%;
+  content: ' ';
+  z-index: -1;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\00003108}}
+.book-block .book:before {
+  width: 99%;
+  left: 7%;
+  background-color: #888;
+  border-radius: 2px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\00003115}}
+.book-block .book:after {
+  width: 5%;
+  left: 99%;
+  background-color: #EFEFEF;
+  -moz-transform: rotateY(20deg);
+  -webkit-transform: perspective(100) rotateY(20deg);
+  background-image: url(../../images/book-pages.png);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\00003115}}
+  .book-block .book:after {
+    background-size: 22.5px auto;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\000031}}
 .docs-page {
   background-image: -webkit-linear-gradient(top, white, white, white, #ececec);
   background-image: linear-gradient(to bottom, white, white, white, #ececec);
@@ -1016,7 +1037,7 @@ hr {
 .docs-page:after {
   clear: both;
 }
-@media -sass-debug-info{filename{}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\000035}}
 .docs-page .inner-wrap {
   max-width: 800px;
   margin-left: auto;
@@ -1034,15 +1055,15 @@ hr {
 .docs-page .inner-wrap:after {
   clear: both;
 }
-@media -sass-debug-info{filename{}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000310}}
 .docs-page section {
   margin-top: 40px;
   margin-top: 4rem;
 }
-@media -sass-debug-info{filename{}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000315}}
 .docs-page .meta-col {
   padding-left: 2%;
-  border-left: 1px dotted #ccc;
+  border-left: 1px dotted #cccccc;
   width: 25%;
   float: right;
   font-size: 12px;
@@ -1051,11 +1072,11 @@ hr {
   line-height: 1.8rem;
   font-family: 'ABeeZee', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
-@media -sass-debug-info{filename{}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000323}}
 .docs-page .meta-col .revisions {
   margin-top: 2em;
 }
-@media -sass-debug-info{filename{}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000329}}
 .docs-page .page-marker {
   font-size: 12px;
   line-height: 18px;
@@ -1068,7 +1089,7 @@ hr {
   right: 0;
   padding: 0 10px;
 }
-@media -sass-debug-info{filename{}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000339}}
 .docs-page .content-col {
   font-size: 16px;
   line-height: 24.0px;
@@ -1078,7 +1099,7 @@ hr {
   padding-right: 2%;
   float: left;
 }
-@media -sass-debug-info{filename{}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000347}}
 .docs-page .main-title {
   text-align: center;
   font-size: 60px;
@@ -1089,7 +1110,7 @@ hr {
   margin: 30px 0 40px 0;
   margin: 3rem 0 4rem 0;
 }
-@media -sass-debug-info{filename{}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000355}}
 .docs-page section h1 {
   font-size: 50px;
   line-height: 60px;
@@ -1099,20 +1120,7 @@ hr {
   margin-top: -1rem;
 }
 
-/**
- * Offset anchors so that jumping to them doesn't make them go underneath stuff
- */
-@media -sass-debug-info{filename{}line{font-family:\0000390}}
-h1[id]:before,
-h2[id]:before,
-h3[id]:before {
-  display: block;
-  content: "";
-  height: 120px;
-  margin: -120px 0 0;
-}
-
-@media -sass-debug-info{filename{}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_images\.scss}line{font-family:\000031}}
 .image-container {
   position: relative;
   overflow: hidden;
@@ -1125,11 +1133,11 @@ h3[id]:before {
   -moz-transition: height 0.5s;
   transition: height 0.5s;
 }
-@media -sass-debug-info{filename{}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_images\.scss}line{font-family:\0000312}}
 .image-container img {
   margin: 0;
 }
-@media -sass-debug-info{filename{}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_images\.scss}line{font-family:\0000316}}
 .image-container .wp-caption-text {
   position: absolute;
   bottom: 0;
@@ -1141,7 +1149,7 @@ h3[id]:before {
   margin-bottom: 0;
   padding: 10px 0;
 }
-@media -sass-debug-info{filename{}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_images\.scss}line{font-family:\0000328}}
 .image-container .toggletext {
   font-size: 10px;
   line-height: 15px;
@@ -1150,3 +1158,11 @@ h3[id]:before {
   margin: 0;
   display: block;
 }
+
+/**
+ * Hotfixes
+ *
+ * To be used for quick, rapidly deployed style fixes.
+ * These should be integrated back into the other .scss files
+ * Each hotfix should be accompanied by the author's information for followup
+ */
