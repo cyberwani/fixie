@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Runs appropriate WordPress functions immediately after the theme has been loaded
  */
@@ -19,10 +18,16 @@ add_action( 'after_setup_theme', 'fixie_setup' );
 function fixie_scripts() {
 
 	$min = (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ) ? '' : 'min.';
+	$ver = time();
+	$dir = get_template_directory_uri();
 
+
+	// ABeeZee emphasizes readability and will do well with dyslexia and poor screens. Inder just looks cool.
 	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Inder|ABeeZee:400,400italic', array() );
-	wp_enqueue_style( 'fixie', get_template_directory_uri() . '/css/build/fixie.' . $min . 'css', array(), time() );
-	wp_enqueue_script( 'fixie', get_template_directory_uri() . '/js/build/fixie.' . $min . 'js', array( 'jquery' ), time(), true );
+
+	wp_enqueue_style( 'fixie', $dir . '/css/build/fixie.' . $min . 'css', array(), $ver );
+
+	wp_enqueue_script( 'fixie', $dir . '/js/build/fixie.' . $min . 'js', array( 'jquery' ), $ver, true );
 
 	wp_localize_script( 'fixie', 'fixie', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' )
@@ -32,7 +37,9 @@ function fixie_scripts() {
 add_action( 'wp_enqueue_scripts', 'fixie_scripts' );
 
 /**
- * Modify the front-page query to show us pages. This is a documentation theme and it's rather presumptuous about it.
+ * Modify the front-page query to show us pages.
+ *
+ * This is a documentation theme and it's rather presumptuous about it.
  *
  * @param $query WP_Query
  */
@@ -50,7 +57,7 @@ if ( ! function_exists( 'widont' ) ) {
 	/**
 	 * Don't let trailing words be widowed, stick an nbsp between the last space
 	 * This function is popular (for instance, included on Wordpress.com), hence the function_exists wrap
-	 * I don't intend for it to be 'pluggable' like you would override this.
+	 * I don't intend for it to be 'pluggable' -- there is no reason to overwrite this.
 	 * @link http://shauninman.com/archive/2006/08/22/widont_wordpress_plugin
 	 *
 	 * @param string $str
@@ -71,8 +78,9 @@ add_filter( 'the_title', 'widont' );
 
 
 /**
- * Touch the root parent page's 'last updated time' whenever a child or grand child is updated.
+ * Touch the root parent page's 'last updated time' whenever a child is updated.
  * This ensures that on the index and the document single page we can reliably say when it was last updated.
+ * @todo this function is a stub
  */
 function fixie_touch_parents() {
 
@@ -153,8 +161,8 @@ function fixie_get_revisions( $post_id = null ) {
 }
 
 /**
- * A fixie version of the excerpt.
- * We only want to display content if someone actually hand crafted the excerpt.
+ * A fixie version of the excerpt that only displays if the hand crafted excerpt was filled out
+ *
  * @uses global $post
  */
 function fixie_the_excerpt() {
@@ -167,7 +175,7 @@ function fixie_the_excerpt() {
 }
 
 /**
- * Handles the ajax request that is looking for page content.
+ * Handles the ajax request for revision page content.
  */
 function inject_page_ajax_handler() {
 
