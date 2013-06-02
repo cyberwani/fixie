@@ -68,18 +68,19 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000337}}
 .book-block h2 a {
   text-decoration: none;
+  color: #ccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000347}}
 .book-block .book img {
   vertical-align: middle;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000351}}
 .book-block .books {
   -moz-perspective: 100px;
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000357}}
 .book-block .book {
   max-width: 20%;
   float: left;
@@ -95,25 +96,25 @@
   box-shadow: none;
   z-index: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000371}}
 .book-block .book img {
   height: auto;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000377}}
 .book-block .book-info {
   float: left;
   padding-left: 2%;
   max-width: 74%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000384}}
 .book-block .book img {
   position: relative;
   max-width: 100%;
   border-radius: 2px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000391}}
 .book-block .book-block-inner {
   *zoom: 1;
   float: left;
@@ -129,7 +130,7 @@
 .book-block .book-block-inner:after {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\0000399}}
 .book-block .book:before,
 .book-block .book:after {
   position: absolute;
@@ -139,14 +140,14 @@
   z-index: -1;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\00003109}}
 .book-block .book:before {
   width: 99%;
   left: 7%;
   background-color: #888;
   border-radius: 2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\00003116}}
 .book-block .book:after {
   width: 5%;
   left: 99%;
@@ -156,7 +157,7 @@
   background-image: url(../../images/book-pages.png);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_front-page\.scss}line{font-family:\00003116}}
   .book-block .book:after {
     background-size: 22.5px auto;
   }
@@ -166,16 +167,26 @@
 .book-block {
   background-image: none;
   background-color: none;
+  margin-bottom: 0;
 }
-@media -sass-debug-info{filename{}line{font-family:\0000311}}
+@media -sass-debug-info{filename{}line{font-family:\0000312}}
+.book-block .book {
+  width: 50px;
+}
+@media -sass-debug-info{filename{}line{font-family:\0000316}}
 .book-block h2 {
   color: #5f5f5f;
-  font-size: 20px;
-  font-size: 2rem;
-  line-height: 20px;
-  line-height: 2rem;
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: .5em;
+  margin-top: -.5em;
 }
-@media -sass-debug-info{filename{}line{font-family:\0000319}}
+@media -sass-debug-info{filename{}line{font-family:\0000324}}
 .book-block .book-info {
-  font-size: 15px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+@media -sass-debug-info{filename{}line{font-family:\0000329}}
+.book-block .book-block-inner {
+  padding: 1% 1% 2% 1%;
 }

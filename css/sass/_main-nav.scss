@@ -14,7 +14,7 @@
 		@include font-size(2);
 		width: 100%;
 		display: block;
-		border-bottom: 1px solid #ececec;
+		border-bottom: 1px solid rgba(0,0,0,0.2);
 
 		a {
 			@include inline-block;
@@ -34,12 +34,14 @@
 }
 
 #nav-toggle {
-	display: inline-block;
-	@include font-size(4);
 	@extend .icon-menu;
+	display: inline-block;
+	position: relative;
+	z-index: 200;
 	overflow: hidden;
+	@include font-size(4);
 
-	@media screen and (max-width: 400px) {
+	@media screen and (max-width: $smallBreak) {
 		width: 40px;
 		width: 4rem;
 	}
@@ -55,7 +57,7 @@
 	zoom: 1;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: $largeBreak) {
 	.js #nav {
 		position: relative;
 		max-height: none;
@@ -80,6 +82,7 @@
 				font-size: $nav-bar-height/2.5;
 				line-height: $nav-bar-height;
 				margin: 0 1em 0 0;
+				border-right: 1px solid #494949;
 
 				&:hover {
 					background-color: rgba(0, 0, 0, 0.6);

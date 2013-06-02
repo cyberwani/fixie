@@ -65,14 +65,14 @@ add_filter( 'get_user_option_screen_layout_dashboard', 'fixie_screen_layout_dash
  */
 function fixie_pages_dashboard_widget() {
 	$books = new WP_Query( array(
-		'post_type' => 'page',
+		'post_type'   => 'page',
 		'post_parent' => 0
 	) );
 	?>
 	<?php if ( $books->have_posts() ): ?>
 		<div class="books">
 
-		<?php while ( $books->have_posts() ):
+			<?php while ( $books->have_posts() ):
 				$books->the_post();
 				global $wp_query;
 				?>
@@ -91,16 +91,22 @@ function fixie_pages_dashboard_widget() {
 						<div class="book-info">
 							<h2><?php the_title(); ?></h2>
 							Last updated:
-							<time><?php echo human_time_diff( get_the_modified_time( 'U' ) ); ?> ago</time> by <?php the_modified_author(); ?>
-							<br><?php edit_post_link( 'Edit', '', ' | '); ?> <a href="<?php the_permalink(); ?>">View</a>
+							<time><?php echo human_time_diff( get_the_modified_time( 'U' ) ); ?> ago</time>
+							by <?php the_modified_author(); ?>
+							<br><?php edit_post_link( 'Edit', '', ' | ' ); ?> <a href="<?php the_permalink(); ?>">View</a>
 						</div>
 					</div>
 
 				</div>
 			<?php endwhile; ?>
 		</div>
+		<?php
+		wp_reset_postdata(); else: ?>
+
+			<p>No docs have been created. Add a <a href="<?php echo admin_url('post-new.php?post_type=page'); ?>">new page</a> to get started.</p>
+
 	<?php endif;
-	wp_reset_postdata();
+
 }
 
 /**
@@ -203,9 +209,11 @@ function fixie_touch_parents() {
  * @return string ordered list of post revisions
  */
 function fixie_list_revisions( $html_id, $post_id = null ) {
+	global $post;
+	// make a backup of the post object
+	$saved_post = $post;
 
 	if ( empty( $post_id ) ) {
-		global $post;
 		$post_id = $post->ID;
 	}
 
@@ -229,7 +237,9 @@ function fixie_list_revisions( $html_id, $post_id = null ) {
 		echo '</select>';
 	}
 
-	wp_reset_postdata();
+	// Restore the post backup. Can't use wp_reset_postdata() because we are resetting to a custom query.
+	setup_postdata( $saved_post );
+	$post = $saved_post;
 }
 
 /**

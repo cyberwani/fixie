@@ -4,15 +4,11 @@ if ( have_posts() ):
 	while ( have_posts() ):
 		the_post();
 		?>
-		<div class="docs-page" data-id-container="top-content">
+		<div class="docs-page">
 
 			<div class="inner-wrap">
 
 				<h1 class="main-title" title="Top" id="top"><?php the_title(); ?></h1>
-
-				<div class="content-col" id="top-content">
-					<?php the_content(); ?>
-				</div>
 
 				<div class="meta-col">
 					<div class="excerpt">
@@ -23,6 +19,12 @@ if ( have_posts() ):
 						<?php fixie_list_revisions( 'top-content' ); ?>
 					</div>
 				</div>
+
+				<div class="content-col" id="top-content">
+					<?php the_content(); ?>
+				</div>
+
+
 
 			</div>
 		</div>
@@ -41,12 +43,11 @@ if ( have_posts() ):
 				$children->the_post();
 				global $post;
 				?>
-				<div class="docs-page" data-id-container="<?php echo $post->post_name; ?>-content">
+				<div class="docs-page">
 					<section class="inner-wrap">
 						<h1 id="<?php echo $post->post_name; ?>"><?php the_title(); ?></h1>
-						<div class="page-marker">page&nbsp;<?php echo $children->current_post + 2; ?> | <?php the_title(); ?></div>
-						<div class="content-col" id="<?php echo $post->post_name; ?>-content">
-							<?php the_content(); ?>
+						<div class="page-marker">
+							page&nbsp;<?php echo $children->current_post + 2; ?> | <?php the_title(); ?>
 						</div>
 
 						<div class="meta-col">
@@ -57,6 +58,10 @@ if ( have_posts() ):
 								Load a revision of this section:
 								<?php fixie_list_revisions( $post->post_name . '-content' ); ?>
 							</div>
+						</div>
+
+						<div class="content-col" id="<?php echo $post->post_name; ?>-content">
+							<?php the_content(); ?>
 						</div>
 
 					</section>

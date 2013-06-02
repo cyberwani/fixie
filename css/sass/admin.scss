@@ -7,16 +7,26 @@
 
 	background-image:none;
 	background-color: none;
+	margin-bottom: 0;
+
+	.book {
+		width: 50px;
+	}
 
 	h2 {
 		color: $darkBackground;
-		font-size: 20px;
-		font-size: 2rem;
-		line-height: 20px;
-		line-height: 2rem;
+		font-size: 1.5em;
+		line-height: 1;
+		margin-bottom: .5em;
+		margin-top:-.5em;
 	}
 
 	.book-info {
-		font-size: 15px;
+		font-size: 12px;
+		line-height: 1.5;
+	}
+
+	.book-block-inner {
+		padding: 1% 1% 2% 1%;
 	}
 }

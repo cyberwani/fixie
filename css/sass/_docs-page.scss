@@ -27,6 +27,17 @@
 			margin-top: 2em;
 		}
 
+		@media screen and (max-width: $smallBreak) {
+			float: none;
+			width: auto;
+			border: 0;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+			background-color: #ececec;
+			padding: 1em;
+		}
+
 	}
 
 	.page-marker {
@@ -45,12 +56,19 @@
 		width: 70%;
 		padding-right: 2%;
 		float: left;
+
+		@media screen and (max-width: $smallBreak ) {
+			width: 100%;
+			float: none;
+			padding: 0;
+		}
 	}
 
 	/* The document title */
 	.main-title {
 		text-align: center;
 		@include font-size(6);
+		line-height: 1;
 		color: #ccc;
 		margin: 30px 0 40px 0;
 		margin: 3rem 0 4rem 0;
@@ -63,4 +81,8 @@
 		// optical alignment with stuff in the column
 	}
 
+}
+
+.fixie-revision-list {
+	max-width: 100%;
 }

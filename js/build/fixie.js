@@ -536,6 +536,10 @@ var responsiveNav = (function (window, document) {
 		menu.appendChild(li);
 	});
 
+	// see /js/lib/responsive-nav.js for details
+	var navigation = responsiveNav("#nav", {
+		label: "Pages"
+	});
 }(window));
 /**
  * Make images not take up a whole mess of vertical space. Give them a full screen option.
@@ -715,8 +719,7 @@ var responsiveNav = (function (window, document) {
 
 	init();
 })(window);
-// see /js/lib/responsive-nav.js for details
-var navigation = responsiveNav("#nav");
+
 /**
  * As the page is scrolled, update the navigation accordingly
  */
