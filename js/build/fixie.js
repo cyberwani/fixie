@@ -407,6 +407,55 @@ var responsiveNav = (function (window, document) {
   return rn;
 })(window, document);
 
+(function ($) {
+	$.belowthefold = function (element, settings) {
+		var fold = $(window).height() + $(window).scrollTop();
+		return fold <= $(element).offset().top - settings.threshold;
+	};
+	$.abovethetop = function (element, settings) {
+		var top = $(window).scrollTop();
+		return top >= $(element).offset().top + $(element).height() - settings.threshold;
+	};
+	$.rightofscreen = function (element, settings) {
+		var fold = $(window).width() + $(window).scrollLeft();
+		return fold <= $(element).offset().left - settings.threshold;
+	};
+	$.leftofscreen = function (element, settings) {
+		var left = $(window).scrollLeft();
+		return left >= $(element).offset().left + $(element).width() - settings.threshold;
+	};
+	$.inviewport = function (element, settings) {
+		return !$.rightofscreen(element, settings) && !$.leftofscreen(element, settings) && !$.belowthefold(element, settings) && !$.abovethetop(element, settings);
+	};
+	$.extend($.expr[':'], {
+		"below-the-fold" : function (a, i, m) {
+			return $.belowthefold(a, {
+				threshold: 0
+			});
+		},
+		"above-the-top"  : function (a, i, m) {
+			return $.abovethetop(a, {
+				threshold: 0
+			});
+		},
+		"left-of-screen" : function (a, i, m) {
+			return $.leftofscreen(a, {
+				threshold: 0
+			});
+		},
+		"right-of-screen": function (a, i, m) {
+			return $.rightofscreen(a, {
+				threshold: 0
+			});
+		},
+		"in-viewport"    : function (a, i, m) {
+			return $.inviewport(a, {
+				threshold: 0
+			});
+		}
+	});
+})(jQuery);
+
 /**
  * When a revision select menu changes, grab the post_id (value) and inject it into a dom element data-inject-into
  */
@@ -668,3 +717,44 @@ var responsiveNav = (function (window, document) {
 })(window);
 // see /js/lib/responsive-nav.js for details
 var navigation = responsiveNav("#nav");
+/**
+ * As the page is scrolled, update the navigation accordingly
+ */
+(function (jQuery, window, undefined) {
+	'use strict';
+
+	// Bind a scroll handler... with throttling
+	jQuery(window).scroll( throttle( checkForActiveLinks, 50) );
+
+	function checkForActiveLinks(){
+		var heading = jQuery('h1[id]:in-viewport').first(),
+				id = heading.attr('id'),
+				correspondingLink = jQuery(document.querySelector('.nav-bar a[href="#' + id + '"]'));
+
+		// if there's a corresponding link for the header in view, apply the class active.
+		if (correspondingLink.length > 0) {
+			jQuery(document.querySelectorAll('.active')).removeClass('active');
+			correspondingLink.addClass('active');
+		}
+	}
+
+
+})(jQuery, window);
+
+// Returns a function, that, when invoked, will only be triggered at most once
+// during a given window of time.
+function throttle(fn, delay) {
+
+	var timer = null;
+
+	return function () {
+		var context = this,
+				args = arguments;
+
+		clearTimeout(timer);
+
+		timer = setTimeout(function () {
+			fn.apply(context, args);
+		}, delay);
+	};
+};

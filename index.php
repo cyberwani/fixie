@@ -4,7 +4,7 @@ if ( have_posts() ):
 	while ( have_posts() ):
 		the_post();
 		?>
-		<div class="docs-page">
+		<div class="docs-page" data-id-container="top-content">
 
 			<div class="inner-wrap">
 
@@ -41,7 +41,7 @@ if ( have_posts() ):
 				$children->the_post();
 				global $post;
 				?>
-				<div class="docs-page">
+				<div class="docs-page" data-id-container="<?php echo $post->post_name; ?>-content">
 					<section class="inner-wrap">
 						<h1 id="<?php echo $post->post_name; ?>"><?php the_title(); ?></h1>
 						<div class="page-marker">page&nbsp;<?php echo $children->current_post + 2; ?> | <?php the_title(); ?></div>

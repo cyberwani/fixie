@@ -196,7 +196,7 @@ function inject_page_ajax_handler() {
 
 	if ( wp_is_post_revision( $page ) ):
 		?>
-		<div class="alert-info">
+		<div class="alert alert-info">
 			<h4>This is a Revision</h4>
 			This section is now showing a revision that was originally created on <?php the_time( get_option( 'date_format' ) . ' \a\t ' . get_option( 'time_format' ) ); ?> by <?php the_author(); ?>
 		</div>

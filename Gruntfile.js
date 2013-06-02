@@ -53,7 +53,7 @@ module.exports = function (grunt) {
 
 			js: {
 				files: ['js/lib/*.js', 'js/src/*.js'],
-				tasks: ['concat']
+				tasks: ['concat', 'uglify']
 			}
 
 		}
