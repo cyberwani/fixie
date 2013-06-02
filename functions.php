@@ -118,7 +118,7 @@ function fixie_pages_dashboard_widget() {
 function fixie_scripts() {
 
 	$min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : 'min.';
-	$ver = time();
+	$ver = '0.1.0';
 	$dir = get_template_directory_uri();
 
 
@@ -141,7 +141,7 @@ add_action( 'wp_enqueue_scripts', 'fixie_scripts' );
  */
 function fixie_admin_scripts() {
 	$min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : 'min.';
-	$ver = time();
+	$ver = '0.1.0';
 	$dir = get_template_directory_uri();
 
 	wp_enqueue_style( 'fixie', $dir . '/css/build/admin.' . $min . 'css', array(), $ver );
