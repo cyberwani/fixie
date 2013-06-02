@@ -169,12 +169,13 @@
 }
 @media -sass-debug-info{filename{}line{font-family:\0000311}}
 .book-block h2 {
+  color: #5f5f5f;
   font-size: 20px;
   font-size: 2rem;
   line-height: 20px;
   line-height: 2rem;
 }
-@media -sass-debug-info{filename{}line{font-family:\0000318}}
+@media -sass-debug-info{filename{}line{font-family:\0000319}}
 .book-block .book-info {
   font-size: 15px;
 }

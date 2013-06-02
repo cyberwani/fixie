@@ -78,7 +78,7 @@ function fixie_pages_dashboard_widget() {
 				?>
 				<div class="book-block">
 					<div class="book-block-inner">
-						<a href="<?php the_permalink(); ?>" class="book">
+						<a href="<?php the_permalink(); ?>" class="book" title="View <?php the_title(); ?>">
 							<?php
 							if ( has_post_thumbnail() ) {
 								the_post_thumbnail( 'book-cover' );
@@ -89,10 +89,10 @@ function fixie_pages_dashboard_widget() {
 						</a>
 
 						<div class="book-info">
-							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+							<h2><?php the_title(); ?></h2>
 							Last updated:
 							<time><?php echo human_time_diff( get_the_modified_time( 'U' ) ); ?> ago</time> by <?php the_modified_author(); ?>
-							<br><?php edit_post_link(); ?>
+							<br><?php edit_post_link( 'Edit', '', ' | '); ?> <a href="<?php the_permalink(); ?>">View</a>
 						</div>
 					</div>
 

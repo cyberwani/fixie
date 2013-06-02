@@ -7,7 +7,7 @@ There is not a huge feature set in Fixie; you won't find a 'theme options' page.
 Much of Fixie's behavior can be modified or extended through action and filter hooks. Once the beta version is up, we'll document Fixie using Fixie.
 
 ### Automatic Navigation
-For all H1—H6 tags in your document that contain an ID reference, Fixie creates a navigation menu.
+Fixie creates a navigation menu for direct children of the current page.
 
 ### Front-end Revisions
 Revision history for each section of a document is shown on the front-end including when it was last revised and by whom. You can switch out revisions of a section on the fly.
@@ -18,8 +18,10 @@ Pages have excerpts and those excerpts are pulled into the margin as marginalia.
 ### Print Stylesheet
 Fixie comes with a bomb print stylesheet. Save as PDF and distribute like a boss.
 
-### Templates
-Sometimes you need the exact same block of text or HTML to be reused repeatedly, like the "needs verification" block on Wikipedia. Fixie includes a short code to include named templates in your documentation.
+## Complementary Plugins
+Fixie is a theme and only a theme. We've created several plugins however, that complement nicely. See
+* Fixie Templates allows reusable blocks of text to be placed in a document
+* Fixie Shortcodes are helpful tools for documentarians. Includes shortcodes to show or hide text based on operating system
 
 ## Usage Tips
 Fixie is all about page hierarchy. Each top level page represents a document. In fact, it's visually represented as a book on the home page by it's featured image. Child pages are automatically included into a long, 'fixie' document with the page title acting as a linked header reference.
