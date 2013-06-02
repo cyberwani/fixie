@@ -23,7 +23,7 @@
 	@include clearfix;
 }
 
-@mixin font-family( $location : heading ) {
+@mixin font-family($location: heading) {
 
 	@if $location == heading {
 		font-family: 'Inder', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;

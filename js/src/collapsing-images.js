@@ -35,12 +35,12 @@
 		var parent = getParentbyClass(e.target, 'image-container');
 
 		// Exit if this isn't an image container
-		if ( ! parent ) {
+		if (!parent) {
 			return true;
 		}
 
 		// Exit if we're clicking on an anchor, or if the parent is an anchor
-		if (e.target.nodeName === 'A' || e.target.parentNode.nodeName === 'A' ) {
+		if (e.target.nodeName === 'A' || e.target.parentNode.nodeName === 'A') {
 			return true;
 		}
 

@@ -136,7 +136,7 @@ pre, code, kbd, samp {
 	font-size: 1em;
 	line-height: 1.5em;
 	margin-bottom: 1.5em;
-	@include font-family( 'code' );
+	@include font-family('code');
 }
 
 /* TABLES */
@@ -248,7 +248,7 @@ dl dd {
 }
 
 dt {
-	@include font-family( 'accent' );
+	@include font-family('accent');
 }
 
 /* HYPERLINKS */
@@ -272,7 +272,6 @@ a {
 	}
 
 }
-
 
 /* MEDIA */
 figure {

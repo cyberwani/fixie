@@ -6,7 +6,7 @@
 		width: 100%;
 		display: block;
 		list-style: none;
-		@include linear-gradient($darkBackground, darken($darkBackground, 20% ));
+		@include linear-gradient($darkBackground, darken($darkBackground, 20%));
 	}
 
 	li {
@@ -14,12 +14,12 @@
 		@include font-size(2);
 		width: 100%;
 		display: block;
-		border-bottom: 1px solid rgba(0,0,0,0.2);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
 		a {
 			@include inline-block;
 			width: 100%;
-			text-align:center;
+			text-align: center;
 		}
 	}
 
@@ -77,7 +77,7 @@
 			padding: 0;
 
 			a {
-				color: lighten( $linkColor, 20% );
+				color: lighten($linkColor, 20%);
 				@include inline-block;
 				font-size: $nav-bar-height/2.5;
 				line-height: $nav-bar-height;
@@ -101,7 +101,7 @@
 
 			margin: 0;
 			position: fixed;
-			z-index:1;
+			z-index: 1;
 			top: 0;
 			width: 100%;
 			overflow: hidden;
@@ -120,7 +120,8 @@
 			height: $nav-bar-height;
 		}
 
-	} // #nav
+	}
+// #nav
 
 	body {
 		margin-top: $nav-bar-height

@@ -2,19 +2,19 @@ module.exports = function (grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
-		pkg   : grunt.file.readJSON('package.json'),
+		pkg: grunt.file.readJSON('package.json'),
 
-		sass : {
+		sass: {
 			front: {
 				options: {
-					style: 'expanded',
-					debugInfo: true,
+					style      : 'expanded',
+					debugInfo  : true,
 					lineNumbers: true
 				},
 
 				files: {
-					'css/build/fixie.css' : 'css/sass/fixie.scss',
-					'css/build/admin.css' : 'css/sass/admin.scss'
+					'css/build/fixie.css': 'css/sass/fixie.scss',
+					'css/build/admin.css': 'css/sass/admin.scss'
 				}
 			},
 
@@ -22,9 +22,9 @@ module.exports = function (grunt) {
 				options: {
 					style: 'compressed'
 				},
-				files: {
-					'css/build/fixie.min.css' : 'css/sass/fixie.scss',
-					'css/build/admin.min.css' : 'css/sass/admin.scss'
+				files  : {
+					'css/build/fixie.min.css': 'css/sass/fixie.scss',
+					'css/build/admin.min.css': 'css/sass/admin.scss'
 				}
 			}
 
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
 		concat: {
 			js: {
 				files: {
-					'js/build/fixie.js' : [ 'js/lib/*.js', 'js/src/*.js']
+					'js/build/fixie.js': [ 'js/lib/*.js', 'js/src/*.js']
 				}
 			}
 		},
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
 		uglify: {
 			js: {
 				files: {
-					'js/build/fixie.min.js' : 'js/build/fixie.js'
+					'js/build/fixie.min.js': 'js/build/fixie.js'
 				}
 			}
 		},

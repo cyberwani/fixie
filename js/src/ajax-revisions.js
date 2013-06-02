@@ -8,7 +8,7 @@
 	 * Bind the event handler to an option menu
 	 */
 	function bindEvents() {
-		jQuery(document.querySelectorAll('.fixie-revision-list')).on( 'change', ajaxRequest );
+		jQuery(document.querySelectorAll('.fixie-revision-list')).on('change', ajaxRequest);
 	}
 
 	/**
@@ -17,15 +17,15 @@
 	 */
 	function ajaxRequest(e) {
 		var el = e.target,
-		pageId = el.value,
-		injectInto = document.getElementById(e.target.attributes[1].nodeValue);
+				pageId = el.value,
+				injectInto = document.getElementById(e.target.attributes[1].nodeValue);
 
-		jQuery.get( fixie.ajaxurl, {
-			'action' : 'get-revision',
-			'pageid' : pageId
-		}, function( data, textStatus, jqXHR ){
+		jQuery.get(fixie.ajaxurl, {
+			'action': 'get-revision',
+			'pageid': pageId
+		}, function (data, textStatus, jqXHR) {
 
-			if ( textStatus != 'success' )
+			if (textStatus != 'success')
 				return false;
 
 			inject(injectInto, data); // @todo now run the handleImages() function in collapsing-images.js. Will require a public API.

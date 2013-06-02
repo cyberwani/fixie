@@ -5,10 +5,10 @@
 	'use strict';
 
 	// Bind a scroll handler... with throttling
-	jQuery(window).scroll( throttle( checkForActiveLinks, 50) );
-	jQuery(window).load( checkForActiveLinks );
+	jQuery(window).scroll(throttle(checkForActiveLinks, 50));
+	jQuery(window).load(checkForActiveLinks);
 
-	function checkForActiveLinks(){
+	function checkForActiveLinks() {
 		var heading = jQuery('h1[id]:in-viewport').first(),
 				id = heading.attr('id'),
 				correspondingLink = jQuery(document.querySelector('.nav-bar a[href="#' + id + '"]'));

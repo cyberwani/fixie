@@ -6,7 +6,6 @@
 @import "helpers/radial-positions-parser";
 @import "helpers/render-gradients";
 @import "helpers/shape-size-stripper";
-
 // Custom Functions
 @import "functions/compact";
 @import "functions/flex-grid";
@@ -17,7 +16,6 @@
 @import "functions/radial-gradient";
 @import "functions/tint-shade";
 @import "functions/transition-property-name";
-
 // CSS3 Mixins
 @import "css3/animation";
 @import "css3/appearance";
@@ -41,7 +39,6 @@
 @import "css3/transition";
 @import "css3/user-select";
 @import "css3/placeholder";
-
 // Addons & other mixins
 @import "addons/button";
 @import "addons/clearfix";
@@ -54,6 +51,5 @@
 @import "addons/size";
 @import "addons/timing-functions";
 @import "addons/triangle";
-
 // Soon to be deprecated Mixins
 @import "bourbon-deprecated-upcoming";

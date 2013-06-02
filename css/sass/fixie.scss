@@ -1,35 +1,25 @@
 // Sets up all reusable variables
 @import 'variables';
-
 // 3rd party mixin library
 @import 'bourbon/bourbon';
-
 // Custom mixins
 @import 'mixins';
-
 // 'Reset' stylesheet that includes a baseline grid built in
 @import 'fluid-baseline-grid';
-
 // Global overrides to the fluid baseline grid
 @import 'global';
-
 // Make the icomoon fonts and classes available
 @import 'icomoon';
-
 // Main page navigation
 @import 'main-nav';
-
 // Print stylesheet
 @import 'print';
-
 // Useful, global classes
 @import 'alerts';
-
 // Stylesheets currently concatenated with everything
 @import 'front-page';
 @import 'docs-page';
 @import 'images';
 @import 'footer';
-
 // Sass stylesheet ready to go that can punt anything.
 @import 'hotfixes';

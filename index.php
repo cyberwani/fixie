@@ -14,6 +14,7 @@ if ( have_posts() ):
 					<div class="excerpt">
 						<?php fixie_the_excerpt(); ?>
 					</div>
+					<?php edit_post_link( 'edit', '<p class="edit-post-link">[', ']</p>' ); ?>
 					<div class="revisions">
 						Load a revision of this section:
 						<?php fixie_list_revisions( 'top-content' ); ?>
@@ -25,7 +26,6 @@ if ( have_posts() ):
 				</div>
 
 
-
 			</div>
 		</div>
 		<?php
@@ -34,8 +34,8 @@ if ( have_posts() ):
 			'posts_per_page' => - 1,
 			'post_type'      => 'page',
 			'post_parent'    => get_the_ID(),
-			'orderby' => 'menu_order',
-			'order' => 'asc'
+			'orderby'        => 'menu_order',
+			'order'          => 'asc'
 		) );
 
 		if ( $children->have_posts() ):
@@ -46,6 +46,7 @@ if ( have_posts() ):
 				<div class="docs-page">
 					<section class="inner-wrap">
 						<h1 id="<?php echo $post->post_name; ?>"><?php the_title(); ?></h1>
+
 						<div class="page-marker">
 							page&nbsp;<?php echo $children->current_post + 2; ?> | <?php the_title(); ?>
 						</div>
@@ -54,6 +55,7 @@ if ( have_posts() ):
 							<div class="excerpt">
 								<?php fixie_the_excerpt(); ?>
 							</div>
+							<?php edit_post_link( 'edit', '<p class="edit-post-link">[', ']</p>' ); ?>
 							<div class="revisions">
 								Load a revision of this section:
 								<?php fixie_list_revisions( $post->post_name . '-content' ); ?>

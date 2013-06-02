@@ -103,7 +103,8 @@ function fixie_pages_dashboard_widget() {
 		<?php
 		wp_reset_postdata(); else: ?>
 
-			<p>No docs have been created. Add a <a href="<?php echo admin_url('post-new.php?post_type=page'); ?>">new page</a> to get started.</p>
+		<p>No docs have been created. Add a
+			<a href="<?php echo admin_url( 'post-new.php?post_type=page' ); ?>">new page</a> to get started.</p>
 
 	<?php endif;
 

@@ -38,7 +38,7 @@
 
 			<?php
 			// close book block on odd numbers or if we're out of posts (array index zero)
-			if ( $wp_query->current_post % 2 === 1 || $wp_query->current_post === $wp_query->post_count-1 ) {
+			if ( $wp_query->current_post % 2 === 1 || $wp_query->current_post === $wp_query->post_count - 1 ) {
 				echo '</div><!-- end book block -->';
 			}
 			?>
