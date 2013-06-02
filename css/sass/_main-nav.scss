@@ -6,7 +6,7 @@
 		width: 100%;
 		display: block;
 		list-style: none;
-		@include linear-gradient(#fff, #ececec);
+		@include linear-gradient($darkBackground, darken($darkBackground, 20% ));
 	}
 
 	li {
@@ -75,7 +75,7 @@
 			padding: 0;
 
 			a {
-				color: $linkColor;
+				color: lighten( $linkColor, 20% );
 				@include inline-block;
 				font-size: $nav-bar-height/2.5;
 				line-height: $nav-bar-height;
@@ -95,7 +95,6 @@
 		}
 
 		.nav-bar {
-			@include linear-gradient(#fff, #fff, #ececec);
 
 			margin: 0;
 			position: fixed;

@@ -1,6 +1,7 @@
 .docs-page {
 	@include block-gradient;
 	position: relative;
+	margin: 0;
 
 	.inner-wrap {
 		@include contain-width;
@@ -10,6 +11,8 @@
 	section {
 		margin-top: 40px;
 		margin-top: 4rem;
+		margin-bottom: 60px;
+		margin-bottom: 6rem;
 	}
 
 	.meta-col {
@@ -28,7 +31,7 @@
 
 	.page-marker {
 		@include font-size(1.2);
-		background-color: #5f5f5f;
+		background-color: $darkBackground;
 		color: #ececec;
 		position: absolute;
 		top: -1.5em;

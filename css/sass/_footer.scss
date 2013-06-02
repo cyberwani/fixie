@@ -1,0 +1,4 @@
+.page-footer {
+	@include linear-gradient($darkBackground, darken($darkBackground, 20%));
+	min-height: $nav-bar-height;
+}

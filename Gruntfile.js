@@ -13,7 +13,8 @@ module.exports = function (grunt) {
 				},
 
 				files: {
-					'css/build/fixie.css' : 'css/sass/fixie.scss'
+					'css/build/fixie.css' : 'css/sass/fixie.scss',
+					'css/build/admin.css' : 'css/sass/admin.scss'
 				}
 			},
 
@@ -22,7 +23,8 @@ module.exports = function (grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'css/build/fixie.min.css' : 'css/sass/fixie.scss'
+					'css/build/fixie.min.css' : 'css/sass/fixie.scss',
+					'css/build/admin.min.css' : 'css/sass/admin.scss'
 				}
 			}
 

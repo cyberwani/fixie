@@ -11,13 +11,106 @@ function fixie_setup() {
 add_action( 'after_setup_theme', 'fixie_setup' );
 
 /**
+ * Remove things in the admin that are not necessary
+ */
+function fixie_admin_init() {
+	remove_menu_page( 'edit.php' );
+	remove_menu_page( 'edit-comments.php' );
+
+	remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
+
+	remove_action( 'welcome_panel', 'wp_welcome_panel' );
+}
+
+add_action( 'admin_init', 'fixie_admin_init' );
+
+/**
+ * Calls wp_add_dashboard_widget functions
+ */
+function fixie_add_dashboard_widgets() {
+	wp_add_dashboard_widget( 'fixie-pages', 'Docs', 'fixie_pages_dashboard_widget' );
+}
+
+add_action( 'wp_dashboard_setup', 'fixie_add_dashboard_widgets' );
+
+/**
+ * Force the dashboard to only have one column available
+ */
+function fixie_screen_layout_columns( $columns ) {
+	$columns['dashboard'] = 1;
+	return $columns;
+}
+
+add_filter( 'screen_layout_columns', 'fixie_screen_layout_columns' );
+
+/**
+ * Returns '1' for the dashboard screen layout option... since we're filtering availability above.
+ */
+function fixie_screen_layout_dashboard() {
+	return 1;
+}
+
+add_filter( 'get_user_option_screen_layout_dashboard', 'fixie_screen_layout_dashboard' );
+
+/**
+ * Display the pages dashboard widget. Shows all the docs (pages) available
+ */
+function fixie_pages_dashboard_widget() {
+	$books = new WP_Query( array(
+		'post_type' => 'page',
+		'post_parent' => 0
+	) );
+	?>
+	<?php if ( $books->have_posts() ): ?>
+		<div class="books">
+
+		<?php while ( $books->have_posts() ):
+				$books->the_post();
+				global $wp_query;
+				?>
+				<div class="book-block">
+					<div class="book-block-inner">
+						<a href="<?php the_permalink(); ?>" class="book">
+							<?php
+							if ( has_post_thumbnail() ) {
+								the_post_thumbnail( 'book-cover' );
+							} else {
+								echo '<img src="' . get_template_directory_uri() . '/images/missing-book-cover.png" alt="missing cover image">';
+							}
+							?>
+						</a>
+
+						<div class="book-info">
+							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+							Last updated:
+							<time><?php echo human_time_diff( get_the_modified_time( 'U' ) ); ?> ago</time> by <?php the_modified_author(); ?>
+							<br><?php edit_post_link(); ?>
+						</div>
+					</div>
+
+				</div>
+			<?php endwhile; ?>
+		</div>
+	<?php endif;
+	wp_reset_postdata();
+}
+
+/**
  * Enqueue Fixie's scripts and styles
  * @uses wp_enqueue_style
  * @uses wp_enqueue_script
  */
 function fixie_scripts() {
 
-	$min = (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ) ? '' : 'min.';
+	$min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : 'min.';
 	$ver = time();
 	$dir = get_template_directory_uri();
 
@@ -35,6 +128,19 @@ function fixie_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'fixie_scripts' );
+
+/**
+ * Enqueue Fixie Scripts and styles for the admin
+ */
+function fixie_admin_scripts() {
+	$min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : 'min.';
+	$ver = time();
+	$dir = get_template_directory_uri();
+
+	wp_enqueue_style( 'fixie', $dir . '/css/build/admin.' . $min . 'css', array(), $ver );
+}
+
+add_action( 'admin_enqueue_scripts', 'fixie_admin_scripts' );
 
 /**
  * Modify the front-page query to show us pages.

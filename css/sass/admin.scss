@@ -1,0 +1,21 @@
+@import 'bourbon/bourbon';
+@import 'mixins';
+@import 'variables';
+@import 'front-page';
+
+.book-block {
+
+	background-image:none;
+	background-color: none;
+
+	h2 {
+		font-size: 20px;
+		font-size: 2rem;
+		line-height: 20px;
+		line-height: 2rem;
+	}
+
+	.book-info {
+		font-size: 15px;
+	}
+}

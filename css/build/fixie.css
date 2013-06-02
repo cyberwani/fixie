@@ -455,8 +455,8 @@ h2[id]:before,
 h3[id]:before {
   display: block;
   content: "";
-  height: 110px;
-  margin: -110px 0 0;
+  height: 103px;
+  margin: -103px 0 0;
 }
 
 @font-face {
@@ -550,10 +550,10 @@ you can use the generic selector below, but it's slower:
   width: 100%;
   display: block;
   list-style: none;
-  background-color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #ececec));
-  background-image: -webkit-linear-gradient(white, #ececec);
-  background-image: linear-gradient(white, #ececec);
+  background-color: #5f5f5f;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5f5f5f), color-stop(100%, #2c2c2c));
+  background-image: -webkit-linear-gradient(#5f5f5f, #2c2c2c);
+  background-image: linear-gradient(#5f5f5f, #2c2c2c);
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_main-nav\.scss}line{font-family:\0000312}}
 #nav li {
@@ -638,7 +638,7 @@ you can use the generic selector below, but it's slower:
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_main-nav\.scss}line{font-family:\0000377}}
   #nav li a {
-    color: #4797aa;
+    color: #89c1ce;
     display: inline-block;
     vertical-align: baseline;
     zoom: 1;
@@ -661,10 +661,6 @@ you can use the generic selector below, but it's slower:
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_main-nav\.scss}line{font-family:\0000397}}
   #nav .nav-bar {
-    background-color: white;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(50%, white), color-stop(100%, #ececec));
-    background-image: -webkit-linear-gradient(white, white, #ececec);
-    background-image: linear-gradient(white, white, #ececec);
     margin: 0;
     position: fixed;
     z-index: 1;
@@ -672,7 +668,7 @@ you can use the generic selector below, but it's slower:
     width: 100%;
     overflow: hidden;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_main-nav\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_main-nav\.scss}line{font-family:\00003106}}
   #nav .nav-bar .wp-post-image {
     display: inline-block;
     height: 35px;
@@ -681,17 +677,17 @@ you can use the generic selector below, but it's slower:
     margin: 0;
     border-right: 1px solid #ececec;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_main-nav\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_main-nav\.scss}line{font-family:\00003116}}
   #nav ul {
     height: 35px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_main-nav\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_main-nav\.scss}line{font-family:\00003122}}
   body {
     margin-top: 35px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_main-nav\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_main-nav\.scss}line{font-family:\00003126}}
   .admin-bar #nav .nav-bar {
     top: 28px;
   }
@@ -1024,6 +1020,7 @@ you can use the generic selector below, but it's slower:
   color: #888;
   *zoom: 1;
   position: relative;
+  margin: 0;
   /* The document title */
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
@@ -1035,7 +1032,7 @@ you can use the generic selector below, but it's slower:
 .docs-page:after {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\000036}}
 .docs-page .inner-wrap {
   max-width: 800px;
   margin-left: auto;
@@ -1053,12 +1050,14 @@ you can use the generic selector below, but it's slower:
 .docs-page .inner-wrap:after {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000311}}
 .docs-page section {
   margin-top: 40px;
   margin-top: 4rem;
+  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000318}}
 .docs-page .meta-col {
   padding-left: 2%;
   border-left: 1px dotted #cccccc;
@@ -1070,11 +1069,11 @@ you can use the generic selector below, but it's slower:
   line-height: 1.8rem;
   font-family: 'ABeeZee', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000326}}
 .docs-page .meta-col .revisions {
   margin-top: 2em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000332}}
 .docs-page .page-marker {
   font-size: 12px;
   line-height: 18px;
@@ -1088,7 +1087,7 @@ you can use the generic selector below, but it's slower:
   padding: 0 10px;
   z-index: 200;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000343}}
 .docs-page .content-col {
   font-size: 16px;
   line-height: 24.0px;
@@ -1098,7 +1097,7 @@ you can use the generic selector below, but it's slower:
   padding-right: 2%;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000351}}
 .docs-page .main-title {
   text-align: center;
   font-size: 60px;
@@ -1109,7 +1108,7 @@ you can use the generic selector below, but it's slower:
   margin: 30px 0 40px 0;
   margin: 3rem 0 4rem 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_docs-page\.scss}line{font-family:\0000359}}
 .docs-page section h1 {
   font-size: 50px;
   line-height: 60px;
@@ -1156,6 +1155,15 @@ you can use the generic selector below, but it's slower:
   line-height: 1.5rem;
   margin: 0;
   display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_footer\.scss}line{font-family:\000031}}
+.page-footer {
+  background-color: #5f5f5f;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5f5f5f), color-stop(100%, #2c2c2c));
+  background-image: -webkit-linear-gradient(#5f5f5f, #2c2c2c);
+  background-image: linear-gradient(#5f5f5f, #2c2c2c);
+  min-height: 35px;
 }
 
 /**
