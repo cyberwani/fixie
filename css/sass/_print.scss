@@ -37,7 +37,7 @@
 		max-width: 100% !important;
 	}
 	@page {
-		margin: 0.5cm
+		margin: 1.5in 1.5in 2in 1.5in;
 	}
 	p, h2, h3 {
 		orphans: 3;
@@ -46,4 +46,54 @@
 	h2, h3 {
 		page-break-after: avoid
 	}
+
+	.meta-col {
+		display:none;
+	}
+
+	.content-col {
+		width: auto !important;
+		float: none;
+	}
+
+	#nav, #nav-toggle, .page-marker, .toggletext {
+		display: none !important;
+	}
+
+	section h1 {
+		page-break-before: always;
+	}
+
+	.alert {
+		border: 1px solid black;
+	}
+
+	.docs-page {
+		border: 0;
+	}
+
+	.image-container {
+		page-break-inside: avoid;
+		border: 0;
+		height: auto !important;
+		width: auto !important;
+		margin: 0;
+	}
+
+	.image-container img {
+		height: auto !important;
+		width: auto !important;
+		max-height: 100%;
+	}
+
+	h1[id]:before,
+	h2[id]:before,
+	h3[id]:before {
+		content: none;
+	}
+
+	.docs-page section {
+		margin: 0;
+	}
+
 }

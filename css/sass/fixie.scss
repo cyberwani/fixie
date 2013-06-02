@@ -12,8 +12,6 @@
 @import 'icomoon';
 // Main page navigation
 @import 'main-nav';
-// Print stylesheet
-@import 'print';
 // Useful, global classes
 @import 'alerts';
 // Stylesheets currently concatenated with everything
@@ -21,5 +19,9 @@
 @import 'docs-page';
 @import 'images';
 @import 'footer';
+
+// Print stylesheet overrides defaults
+@import 'print';
+
 // Sass stylesheet ready to go that can punt anything.
 @import 'hotfixes';
