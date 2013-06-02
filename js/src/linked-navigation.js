@@ -6,6 +6,7 @@
 
 	// Bind a scroll handler... with throttling
 	jQuery(window).scroll( throttle( checkForActiveLinks, 50) );
+	jQuery(window).load( checkForActiveLinks );
 
 	function checkForActiveLinks(){
 		var heading = jQuery('h1[id]:in-viewport').first(),

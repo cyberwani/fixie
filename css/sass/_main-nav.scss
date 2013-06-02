@@ -90,7 +90,8 @@
 		}
 
 		.active {
-			border-top: 3px solid #333;
+			background-color: $linkColor;
+			color: #ececec;
 		}
 
 		.nav-bar {
