@@ -6,6 +6,7 @@ function fixie_setup() {
 	add_image_size( 'book-cover', 200, 300, true );
 	add_theme_support( 'post-thumbnails' );
 	add_post_type_support( 'page', 'excerpt' );
+	add_editor_style( 'css/build/editor-style.min.css' );
 }
 
 add_action( 'after_setup_theme', 'fixie_setup' );
@@ -145,6 +146,8 @@ function fixie_admin_scripts() {
 	$dir = get_template_directory_uri();
 
 	wp_enqueue_style( 'fixie', $dir . '/css/build/admin.' . $min . 'css', array(), $ver );
+
+	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Inder|ABeeZee:400,400italic', array() );
 }
 
 add_action( 'admin_enqueue_scripts', 'fixie_admin_scripts' );

@@ -14,7 +14,8 @@ module.exports = function (grunt) {
 
 				files: {
 					'css/build/fixie.css': 'css/sass/fixie.scss',
-					'css/build/admin.css': 'css/sass/admin.scss'
+					'css/build/admin.css': 'css/sass/admin.scss',
+					'css/build/editor-style.css' : 'css/sass/editor-style.scss'
 				}
 			},
 
@@ -24,7 +25,8 @@ module.exports = function (grunt) {
 				},
 				files  : {
 					'css/build/fixie.min.css': 'css/sass/fixie.scss',
-					'css/build/admin.min.css': 'css/sass/admin.scss'
+					'css/build/admin.min.css': 'css/sass/admin.scss',
+					'css/build/editor-style.min.css': 'css/sass/editor-style.scss'
 				}
 			}
 

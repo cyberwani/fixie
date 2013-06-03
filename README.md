@@ -1,6 +1,7 @@
 # Fixie
 Fixie is a WordPress theme for displaying readable and navigable documentation.
 
+* Current Working: 0.2.0-working
 * Latest Stable: 0.1.0
 * Contributors: @tddewey, @lkwdwrd
 * Contributing: By all means. Open an issue, or submit a Pull request against the master branch
