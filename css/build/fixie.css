@@ -728,15 +728,17 @@ you can use the generic selector below, but it's slower:
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000322}}
 .alert h4, .alert-success h4, .alert-danger h4,
-.alert-error h4, .alert-info h4 {
+.alert-error h4, .alert-info h4, .alert .alert-title, .alert-success .alert-title, .alert-danger .alert-title,
+.alert-error .alert-title, .alert-info .alert-title {
   color: #c09853;
-  font-size: 15px;
-  line-height: 22.5px;
-  font-size: 1.5rem;
-  line-height: 2.25rem;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 27px;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000330}}
 .alert > p, .alert-success > p, .alert-danger > p,
 .alert-error > p, .alert-info > p,
 .alert > ul,
@@ -746,43 +748,43 @@ you can use the generic selector below, but it's slower:
 .alert-info > ul {
   margin-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000334}}
 .alert p + p, .alert-success p + p, .alert-danger p + p,
 .alert-error p + p, .alert-info p + p {
   margin-top: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000340}}
 .alert-success {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000346}}
 .alert-success h4 {
   color: #468847;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000353}}
 .alert-danger,
 .alert-error {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000359}}
 .alert-danger h4,
 .alert-error h4 {
   color: #b94a48;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000364}}
 .alert-info {
   background-color: #d9edf7;
   border-color: #bce8f1;
   color: #3a87ad;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tddewey\/Sites\/vagrant\/www\/wptrunk\/wp-content\/themes\/fixie\/css\/sass\/_alerts\.scss}line{font-family:\0000370}}
 .alert-info h4 {
   color: #3a87ad;
 }

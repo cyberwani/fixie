@@ -19,9 +19,10 @@
 	border-radius: $borderRadius;
 	color: $warningText;
 
-	h4 {
+	h4, .alert-title {
 		color: $warningText;
-		@include font-size(1.5);
+		font-style: italic;
+		@include font-size(1.8);
 		margin: 0;
 	}
 
