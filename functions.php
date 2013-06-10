@@ -232,8 +232,14 @@ function fixie_list_revisions( $html_id, $post_id = null ) {
 				<option value="<?php echo $post_id; ?>">Current Version</option>
 			<?php else: ?>
 				<option value="<?php the_ID(); ?>">
-					<?php echo wp_post_revision_title_expanded( get_the_ID(), false ); ?>
-					<?php //the_time( 'd/m/y, g:ia T' ); ?>
+					<?php
+					if ( function_exists( 'wp_post_revision_title_expanded' ) ) {
+						// Introduced in WP 3.6
+						echo wp_post_revision_title_expanded( get_the_ID(), false );
+					} else {
+						the_time( 'd/m/y, g:ia T' );
+					}
+				?>
 				</option>
 			<?php endif; ?>
 		<?php
