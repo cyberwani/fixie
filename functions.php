@@ -15,9 +15,6 @@ add_action( 'after_setup_theme', 'fixie_setup' );
  * Remove things in the admin that are not necessary
  */
 function fixie_admin_init() {
-	remove_menu_page( 'edit.php' );
-	remove_menu_page( 'edit-comments.php' );
-
 	remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
 	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'normal' );
 	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
@@ -32,6 +29,12 @@ function fixie_admin_init() {
 }
 
 add_action( 'admin_init', 'fixie_admin_init' );
+
+function fixie_remove_menus() {
+	remove_menu_page( 'edit.php' );
+	remove_menu_page( 'edit-comments.php' );
+}
+add_action( 'admin_menu', 'fixie_remove_menus' );
 
 /**
  * Calls wp_add_dashboard_widget functions
